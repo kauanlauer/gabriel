@@ -28,7 +28,7 @@ main {
     flex-direction: row;
     justify-content: center;
     padding: 15;
-    background-image: url(./Fotos/mosaic-wallpaper.jpg);
+    background-image: url(./Fotos/fundo.png);
 }
 main > h2{
     font-size: xx-large;
