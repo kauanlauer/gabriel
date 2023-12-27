@@ -17,7 +17,8 @@
         <div class="header-buttons">
             <a href="#fileira" class="header-button">Nosso Serviço</a>
             <a href="#contato" class="header-button">Contato</a>
-            <a href="QuemSomos.html" class="header-button">Quem somos</a>        
+            <a href="QuemSomos.html" class="header-button">Quem somos</a>
+            <a href="orcamento.html" class="header-button">Orçamento</a>          
         </div>
     </header>
 
@@ -69,9 +70,15 @@
     </footer>
 
     <script>
+        // Inicializa o contador global
+        let numeroPedido = 1;
+
         function enviarParaWhatsapp() {
-            // Gere um número de pedido aleatório (apenas números)
-            const numeroPedido = Math.floor(Math.random() * 1000) + 1;
+            // Formata o número do pedido com zeros à esquerda
+            const numeroFormatado = numeroPedido.toString().padStart(5, '0');
+
+            // Incrementa o contador para o próximo pedido
+            numeroPedido++;
 
             // Obtenha os dados do formulário
             const nome = document.getElementById('nome').value;
@@ -82,7 +89,7 @@
 
             // Construa a mensagem para o WhatsApp
             const mensagem =
-                `Pedido: ${numeroPedido}\n\n` +
+                `Pedido: ${numeroFormatado}\n\n` +
                 `Nome: ${nome}\n` +
                 `Cidade e Bairro: ${cidadeBairro}\n` +
                 `Telefone: ${telefone}\n` +
