@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Fotos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="ng.css">
+    <link rel="stylesheet" href="orcamento.css">
+    <title>Metálica Colombo</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo"> Metálica <span> Colombo</span></a>
+        
+        <!-- Adicione os botões dentro de um elemento div ou span -->
+        <div class="header-buttons">
+            <a href="#fileira" class="header-button">Nosso Serviço</a>
+            <a href="#contato" class="header-button">Contato</a>
+            <a href="QuemSomos.html" class="header-button">Quem somos</a>
+            <a href="orcamento.html" class="header-button">Orçamento</a>          
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção para o formulário de orçamento -->
+        <section class="orcamento-form">
+            <h2>Formulário de Orçamento</h2>
+            <form id="orcamentoForm" onsubmit="enviarParaWhatsapp(); return false;">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
+                
+                <label for="cidade_bairro">Cidade e Bairro:</label>
+                <input type="text" id="cidade_bairro" name="Cidade e bairro" placeholder="Sua Cidade e Bairro" required>
+
+                <label for="telefone">WhatsApp:(00)0 0000-0000</label>
+                <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone" required>
+
+                <label for="tipo-servico">Tipo de Serviço:</label>
+                <select id="tipo-servico" name="tipo-servico" required>
+                    <option value="" disabled selected>Selecione o serviço</option>
+                    <option value="mezaninos">Mezaninos</option>
+                    <option value="coberturas">Coberturas</option>
+                    <option value="barracoes">Barracões</option>
+                    <option value="portoes">Portões</option>
+                    <option value="grades">Grades</option>
+                    <option value="calhas">Calhas</option>
+                    <option value="gradil">Gradil</option>
+                    <option value="guarda-corpo">Guarda Corpo</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="outras">Outras</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+
+                <label for="detalhes">Detalhes:</label>
+                <textarea id="detalhes" name="detalhes" placeholder="Descreva mais detalhes sobre o serviço, como tamanho em metros, e qual material deseja fazer..." required></textarea>
+
+                <input type="submit" value="Enviar Orçamento">
+            </form>
+        </section>
+
+        <!-- Restante do conteúdo da página -->
+        <!-- ... -->
+
+    </main>
+
+    <footer>
+        <p class="sobrenos"> © 2023 Metálica Colombo. Todos os direitos reservados. <a href=""></a></p>
+        </p> Desenvolvido por Kauan Lauer </p>
+    </footer>
+
+    <script>
+        function enviarParaWhatsapp() {
+            // Gere um número de pedido aleatório (apenas números)
+            const numeroPedido = Math.floor(Math.random() * 1000) + 1;
+
+            // Obtenha os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const cidadeBairro = document.getElementById('cidade_bairro').value;
+            const telefone = document.getElementById('telefone').value;
+            const tipoServico = document.getElementById('tipo-servico').value;
+            const detalhes = document.getElementById('detalhes').value;
+
+            // Construa a mensagem para o WhatsApp
+            const mensagem =
+                `Pedido: ${numeroPedido}\n\n` +
+                `Nome: ${nome}\n` +
+                `Cidade e Bairro: ${cidadeBairro}\n` +
+                `Telefone: ${telefone}\n` +
+                `Tipo de Serviço: ${tipoServico}\n` +
+                `Detalhes: ${detalhes}`;
+
+            // Construa o link para o WhatsApp
+            const linkWhatsapp = `https://wa.me/554197602279?text=${encodeURIComponent(mensagem)}`;
+
+            // Abra o WhatsApp em uma nova guia
+            window.open(linkWhatsapp, '_blank');
+        }
+    </script>
+</body>
+</html>
