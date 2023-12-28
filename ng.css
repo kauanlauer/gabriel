@@ -315,6 +315,7 @@ footer .sobrenos a:hover{
 .header-buttons {
     display: flex;
     gap: 10px;
+    justify-content: center; /* Alinhe os botões ao centro */
 }
 
 .header-button {
@@ -329,4 +330,15 @@ footer .sobrenos a:hover{
 
 .header-button:hover {
     background-color: rgba(0, 0, 0, 0.322); /* Efeito de fundo ao passar o mouse */
+}
+
+@media only screen and (max-width: 600px) {
+    .header-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-button {
+        margin-bottom: 10px;
+    }
 }
