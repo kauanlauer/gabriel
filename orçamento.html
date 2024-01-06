@@ -8,23 +8,94 @@
     <link rel="stylesheet" href="ng.css">
     <link rel="stylesheet" href="orcamento.css">
     <title>Metálica Colombo</title>
+    <style>
+        /* Estilos para o menu lateral */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #11111152;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Estilos para o botão de menu */
+        #menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        /* Estilos para os botões do cabeçalho */
+        .header-buttons {
+            display: flex;
+            flex-direction: column; /* Alteração aqui para alinhar os botões verticalmente */
+            gap: 10px;
+            align-items: center; /* Alinhamento centralizado dos botões */
+        }
+
+        .header-button {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            color: #000000;
+            border: 2px solid #ffffff00;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-button:hover {
+            background-color: rgba(0, 0, 0, 0.322);
+        }
+
+        /* Adicione outros estilos conforme necessário */
+    </style>
+    <!-- Adicione outras configurações do head aqui -->
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo"> Metálica <span> Colombo</span></a>
-        
-        <!-- Adicione os botões dentro de um elemento div ou span -->
-        <div class="header-buttons">
-            <a href="index.html#fileira" class="header-button">Nosso Serviço</a>
-            <a href="index.html#contato" class="header-button">Contato</a>
-            <a href="QuemSomos.html" class="header-button">Quem somos</a>
-         
+        <span id="menu-btn">&#9776; Menu</span>
+        <br>
+        <br>
+        <div class="sidebar" id="mySidebar">
+            <br>
+            <br>
+            <br>
+            
+            <a href="index.html" class="logo"> Metálica <span> Colombo</span></a>
+            <div class="header-buttons">
+                <a href="QuemSomos.html" class="header-button">Quem somos</a>
+                
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Seção para o formulário de orçamento -->
         <section class="orcamento-form">
+            <br>
+            <br>
             <h2>Formulário de Orçamento</h2>
             <form id="orcamentoForm" onsubmit="enviarParaWhatsapp(); return false;">
                 <label for="nome">Nome:</label>
@@ -101,6 +172,25 @@
             // Abra o WhatsApp em uma nova guia
             window.open(linkWhatsapp, '_blank');
         }
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            toggleSidebar();
+        });
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+
+        window.onclick = function(event) {
+            var sidebar = document.getElementById("mySidebar");
+            if (event.target !== sidebar && event.target.id !== "menu-btn") {
+                sidebar.style.width = "0";
+            }
+        };
     </script>
 </body>
 </html>
