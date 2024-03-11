@@ -68,10 +68,7 @@
         .header-button:hover {
             background-color: rgba(0, 0, 0, 0.322);
         }
-
-        /* Adicione outros estilos conforme necessário */
     </style>
-    <!-- Adicione outras configurações do head aqui -->
 </head>
 <body>
     <header>
@@ -85,8 +82,9 @@
             
             <a href="index.html" class="logo"> Metálica <span> Colombo</span></a>
             <div class="header-buttons">
+                <a href="#fileira" class="header-button">Nosso Serviço</a>
+                <a href="#contato" class="header-button">Contato</a>
                 <a href="QuemSomos.html" class="header-button">Quem somos</a>
-                
             </div>
         </div>
     </header>
@@ -102,7 +100,7 @@
                 <input type="text" id="nome" name="nome" placeholder="Seu Nome" required>
                 
                 <label for="cidade_bairro">Cidade e Bairro:</label>
-                <input type="text" id="cidade_bairro" name="Cidade e bairro" placeholder="Sua Cidade e Bairro" required>
+                <input type="text" id="cidade_bairro" name="cidade_bairro" placeholder="Sua Cidade e Bairro" required>
 
                 <label for="telefone">WhatsApp:(00)0 0000-0000</label>
                 <input type="tel" id="telefone" name="telefone" placeholder="Seu Telefone" required>
@@ -120,7 +118,6 @@
                     <option value="guarda-corpo">Guarda Corpo</option>
                     <option value="outdoor">Outdoor</option>
                     <option value="outras">Outras</option>
-                    <!-- Adicione mais opções conforme necessário -->
                 </select>
 
                 <label for="detalhes">Detalhes:</label>
@@ -129,51 +126,38 @@
                 <input type="submit" value="Enviar Orçamento">
             </form>
         </section>
-
-        <!-- Restante do conteúdo da página -->
-        <!-- ... -->
-
     </main>
 
     <footer>
-        <p class="sobrenos">© 2023 Metálica Colombo. Todos os direitos reservados. <h6>CNJP  51.747.391/0001-43</h6> <br> <a href="https://www.instagram.com/erickkauanlauer/" target="_blank">Desenvolvido por Kauan Lauer</a></p>
+        <p class="sobrenos">© 2023 Metálica Colombo. Todos os direitos reservados. <h6>CNPJ  51.747.391/0001-43</h6> <br> <a href="https://www.instagram.com/erickkauanlauer/" target="_blank">Desenvolvido por Kauan Lauer</a></p>
     </footer>
 
     <!-- Adicione o código do anúncio abaixo -->
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-        crossorigin="anonymous">
-        // Inicializa o contador global
+    <script>
         let numeroPedido = 1;
 
         function enviarParaWhatsapp() {
-            // Formata o número do pedido com zeros à esquerda
             const numeroFormatado = numeroPedido.toString().padStart(5, '0');
-
-            // Incrementa o contador para o próximo pedido
             numeroPedido++;
 
-            // Obtenha os dados do formulário
             const nome = document.getElementById('nome').value;
             const cidadeBairro = document.getElementById('cidade_bairro').value;
             const telefone = document.getElementById('telefone').value;
             const tipoServico = document.getElementById('tipo-servico').value;
             const detalhes = document.getElementById('detalhes').value;
 
-            // Construa a mensagem para o WhatsApp
             const mensagem =
-                `Pedido: ${numeroFormatado}\n\n` +
                 `Nome: ${nome}\n` +
                 `Cidade e Bairro: ${cidadeBairro}\n` +
                 `Telefone: ${telefone}\n` +
                 `Tipo de Serviço: ${tipoServico}\n` +
                 `Detalhes: ${detalhes}`;
 
-            // Construa o link para o WhatsApp
             const linkWhatsapp = `https://wa.me/554197602279?text=${encodeURIComponent(mensagem)}`;
 
-            // Abra o WhatsApp em uma nova guia
             window.open(linkWhatsapp, '_blank');
         }
+
         document.getElementById("menu-btn").addEventListener("click", function() {
             toggleSidebar();
         });
