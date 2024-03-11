@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Fotos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <title>Galeria de Fotos</title>
+
+    <link rel="stylesheet" href="ng.css">
+    <style>
+         /* Estilos para o menu lateral */
+         .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #11111152;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        /* Estilos para o botão de menu */
+        #menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 2;
+            color: #fff;
+        }
+
+        /* Estilos para os botões do cabeçalho */
+        .header-buttons {
+            display: flex;
+            flex-direction: column; /* Alteração aqui para alinhar os botões verticalmente */
+            gap: 10px;
+            align-items: center; /* Alinhamento centralizado dos botões */
+        }
+
+        .header-button {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            color: #000000;
+            border: 2px solid #ffffff00;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-button:hover {
+            background-color: rgba(0, 0, 0, 0.322);
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            margin: 10px;
+        }
+
+        .gallery-item img {
+            width: 200px; /* Ajuste conforme necessário */
+            height: 200px; /* Ajuste conforme necessário */
+            object-fit: cover;
+        }
+
+        /* Adicione outros estilos conforme necessário */
+    </style>
+    <!-- Adicione outras configurações do head aqui -->
+</head>
+<body>
+    <header>
+        <span id="menu-btn">&#9776; Menu</span>
+        <br>
+        <br>
+        <div class="sidebar" id="mySidebar">
+            <br>
+            <br>
+            <br>
+
+            <a href="#" class="logo"> Metálica <span> Colombo</span></a>
+            <div class="header-buttons">
+                <a href="index.html" class="header-button">Nosso Serviço</a>
+                <a href="index.html" class="header-button">Contato</a>
+                <a href="QuemSomos.html" class="header-button">Quem somos</a>
+                <a href="orçamento.html" class="header-button">Orçamento</a>
+                <a href="galeria.html" class="header-button">Galeria</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Galeria de Fotos</h2>
+        <!-- Estrutura da galeria de fotos -->
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="./Fotos/novo/escada.jpg" data-lightbox="gallery" data-title="Escada"><img src="./Fotos/novo/escada.jpg" alt="Escada"></a>
+            </div>
+            <div class="gallery-item">
+                <a href="./Fotos/imagem (2).jpeg" data-lightbox="gallery" data-title="Corrimão Preto"><img src="./Fotos/imagem (2).jpeg" alt="Corrimão Preto"></a>
+            </div>
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+    </main>
+    <footer>
+
+   <footer>
+    <p class="sobrenos">© 2023 Metálica Colombo. Todos os direitos reservados. <h6>CNJP  51.747.391/0001-43</h6> <br> <a href="https://www.instagram.com/erickkauanlauer/" target="_blank">Desenvolvido por Kauan Lauer</a></p>
+</footer>
+<script src="scripts.js"></script>
+
+<!-- Adicione o código do anúncio abaixo -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
+     crossorigin="anonymous"></script>
+
+<script>
+    document.getElementById("menu-btn").addEventListener("click", function() {
+        toggleSidebar();
+    });
+
+    function toggleSidebar() {
+        var sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "250px";
+        }
+    }
+
+    window.onclick = function(event) {
+        var sidebar = document.getElementById("mySidebar");
+        if (event.target !== sidebar && event.target.id !== "menu-btn") {
+            sidebar.style.width = "0";
+        }
+    };
+      $(document).ready(function(){
+        $('.slider').slick({
+            slidesToShow: 3, // Quantidade de imagens visíveis ao mesmo tempo
+            slidesToScroll: 1, // Quantidade de imagens a serem roladas
+            autoplay: true, // Ativa o autoplay
+            autoplaySpeed: 2000, // Velocidade do autoplay em milissegundos
+            dots: true, // Mostra os pontos de navegação
+            arrows: true, // Mostra as setas de navegação
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>',
+            responsive: [
+                {
+                    breakpoint: 768, // Mudança de layout em telas menores
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 480, // Mudança de layout em telas ainda menores
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+    document.addEventListener('click', function (event) {
+            if (!event.target.closest('.lightbox')) {
+                // Fecha a lightbox se o clique não estiver dentro dela
+                lightbox.close();
+            }
+        });
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</body>
+</html>

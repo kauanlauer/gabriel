@@ -349,3 +349,113 @@ footer .sobrenos a:hover{
         margin-bottom: 10px;
     }
 }
+
+
+.galeria-carousel {
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.galeria-item {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.galeria-item img {
+    width: 100%; /* Definindo largura fixa para as imagens */
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.descricao {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.descricao h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.descricao p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.item {
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+.item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.item h3 {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.item p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .item {
+        width: 150px;
+    }
+}
