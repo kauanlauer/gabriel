@@ -7,9 +7,12 @@
     <link rel="shortcut icon" href="Fotos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
     <title>Galeria de Fotos</title>
 
-    <link rel="stylesheet" href="ng.css">
+    <link rel="stylesheet" href="galeria.css">
     <style>
          /* Estilos para o menu lateral */
          .sidebar {
@@ -70,22 +73,7 @@
         .header-button:hover {
             background-color: rgba(0, 0, 0, 0.322);
         }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .gallery-item {
-            margin: 10px;
-        }
-
-        .gallery-item img {
-            width: 200px; /* Ajuste conforme necessário */
-            height: 200px; /* Ajuste conforme necessário */
-            object-fit: cover;
-        }
-
+   
         /* Adicione outros estilos conforme necessário */
     </style>
     <!-- Adicione outras configurações do head aqui -->
@@ -113,13 +101,22 @@
     <main>
         <h2>Galeria de Fotos</h2>
         <!-- Estrutura da galeria de fotos -->
-        <div class="gallery">
-            <div class="gallery-item">
-                <a href="./Fotos/novo/escada.jpg" data-lightbox="gallery" data-title="Escada"><img src="./Fotos/novo/escada.jpg" alt="Escada"></a>
-            </div>
-            <div class="gallery-item">
-                <a href="./Fotos/imagem (2).jpeg" data-lightbox="gallery" data-title="Corrimão Preto"><img src="./Fotos/imagem (2).jpeg" alt="Corrimão Preto"></a>
-            </div>
+        <div class="gallery" id="gallery">
+            <!-- Lista de imagens -->
+            <img src="Fotos/imagem (1).jpg" alt="Imagem 1">
+            <img src="Fotos/imagem (2).jpg" alt="Imagem 2">
+            <img src="Fotos/imagem (3).jpg" alt="Imagem 3">
+            <img src="Fotos/imagem (4).jpg" alt="Imagem 4">
+            <img src="Fotos/imagem (5).jpg" alt="Imagem 5">
+            <img src="Fotos/imagem (6).jpg" alt="Imagem 6">
+            <img src="Fotos/imagem (7).jpg" alt="Imagem 7">
+            <img src="Fotos/imagem (8).jpg" alt="Imagem 8">
+            <img src="Fotos/imagem (9).jpg" alt="Imagem 9">
+            <img src="Fotos/imagem (10).jpg" alt="Imagem 10">
+            <img src="Fotos/imagem (11).jpg" alt="Imagem 11">
+            <img src="Fotos/imagem (12).jpg" alt="Imagem 12">
+            <img src="Fotos/imagem (13).jpeg" alt="Imagem 13">
+            <img src="Fotos/imagem (14).jpg" alt="Imagem 14">
             <!-- Adicione mais imagens conforme necessário -->
         </div>
     </main>
