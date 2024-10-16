@@ -25,4 +25,20 @@ section {
 footer {
     background-color: #333;
     color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer div {
+    margin: 5px 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    text-decoration: none;
 }
