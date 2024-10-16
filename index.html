@@ -7,17 +7,45 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #333;
+            color: white;
+        }
+        h1, h2 {
+            font-family: 'Oswald', sans-serif;
+        }
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .payment-icons {
+            font-size: 24px; 
+            margin-right: 10px; 
+        }
+        footer {
+            background-color: #333; 
+            color: white; 
+            padding: 20px; 
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
     <!-- Cabeçalho -->
-    <header class="bg-dark text-white text-center py-5">
+    <header class="text-center py-5">
         <h1 class="animate__animated animate__fadeInDown">Metálica Colombo</h1>
         <p class="lead animate__animated animate__fadeIn">Especializados em estruturas metálicas em Curitiba e região.</p>
         <p class="h5">Solicite seu orçamento agora!</p>
-        <a href="#contato" class="btn btn-primary btn-lg animate__animated animate__bounce">Faça um orçamento hoje mesmo!</a>
+        <a href="#contato" class="btn btn-warning btn-lg animate__animated animate__bounce">Faça um orçamento hoje mesmo!</a>
         <br><br>
         <a href="galeria.html" class="btn btn-secondary btn-lg">Visite Nossa Galeria</a>
     </header>
@@ -38,9 +66,9 @@
 
                 <!-- Grades -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Grades</h5>
+                            <h5 class="card-title"><i class="fas fa-shield-alt"></i> Grades</h5>
                             <p class="card-text">Oferecemos grades de segurança em aço, ideais para proteger sua propriedade e garantir a estética do ambiente.</p>
                         </div>
                     </div>
@@ -48,9 +76,9 @@
 
                 <!-- Mezaninos -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Mezaninos</h5>
+                            <h5 class="card-title"><i class="fas fa-building"></i> Mezaninos</h5>
                             <p class="card-text">Construímos mezaninos sob medida, otimizando espaços e proporcionando soluções práticas para sua empresa ou residência.</p>
                         </div>
                     </div>
@@ -58,9 +86,9 @@
 
                 <!-- Coberturas -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Coberturas</h5>
+                            <h5 class="card-title"><i class="fas fa-umbrella"></i> Coberturas</h5>
                             <p class="card-text">Desenvolvemos coberturas em ferro e metal, garantindo proteção contra intempéries e durabilidade.</p>
                         </div>
                     </div>
@@ -68,9 +96,9 @@
 
                 <!-- Barracões -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Barracões</h5>
+                            <h5 class="card-title"><i class="fas fa-warehouse"></i> Barracões</h5>
                             <p class="card-text">Estruturas metálicas robustas para barracões, ideais para armazenamento e atividades comerciais.</p>
                         </div>
                     </div>
@@ -78,9 +106,9 @@
 
                 <!-- Portões -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Portões</h5>
+                            <h5 class="card-title"><i class="fas fa-gate"></i> Portões</h5>
                             <p class="card-text">Fabricamos portões personalizados em aço, oferecendo segurança e estilo para sua entrada.</p>
                         </div>
                     </div>
@@ -88,9 +116,9 @@
 
                 <!-- Calhas -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Calhas</h5>
+                            <h5 class="card-title"><i class="fas fa-tint"></i> Calhas</h5>
                             <p class="card-text">Produzimos calhas em aço para drenagem eficiente, evitando problemas de infiltração.</p>
                         </div>
                     </div>
@@ -98,9 +126,9 @@
 
                 <!-- Gradil -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Gradil</h5>
+                            <h5 class="card-title"><i class="fas fa-fence"></i> Gradil</h5>
                             <p class="card-text">Oferecemos gradis em aço que combinam segurança e estética, perfeitos para áreas externas.</p>
                         </div>
                     </div>
@@ -108,9 +136,9 @@
 
                 <!-- Guarda Corpo -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Guarda Corpo</h5>
+                            <h5 class="card-title"><i class="fas fa-hand-holding-heart"></i> Guarda Corpo</h5>
                             <p class="card-text">Instalamos guarda corpos em aço, garantindo segurança em escadas e varandas com design moderno.</p>
                         </div>
                     </div>
@@ -118,9 +146,9 @@
 
                 <!-- Outdoor -->
                 <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm hover-effect">
+                    <div class="card shadow-sm">
                         <div class="card-body">
-                            <h5 class="card-title">Outdoor</h5>
+                            <h5 class="card-title"><i class="fas fa-bullhorn"></i> Outdoor</h5>
                             <p class="card-text">Criamos estruturas para outdoors que destacam sua marca, combinando durabilidade e visibilidade.</p>
                         </div>
                     </div>
@@ -133,20 +161,13 @@
     <!-- Seção de Contato -->
     <section id='contato' class='py-5 bg-dark text-white text-center'>
         <h2>Entre em Contato</h2><br />
-        <!-- Botões das Redes Sociais -->
-        <a href="#" 
-           onclick='window.open("https://api.whatsapp.com/send/?phone=554197602279&text=Gostaria+de+fazer+um+or%C3%A7amento%21&type=phone_number&app_absent=0", "_blank")' 
-           class='btn btn-success mr-2'>
+        <a href="#" onclick='window.open("https://api.whatsapp.com/send/?phone=554197602279&text=Gostaria+de+fazer+um+or%C3%A7amento%21&type=phone_number&app_absent=0", "_blank")' class='btn btn-success mr-2'>
             Chat no WhatsApp
         </a>
-
-        <a href="#" 
-           onclick='window.open("https://www.instagram.com/metalicacolombo/", "_blank")' 
-           class='btn btn-light'>
+        <a href="#" onclick='window.open("https://www.instagram.com/metalicacolombo/", "_blank")' class='btn btn-light'>
             Instagram
         </a>
 
-        <!-- Aceitamos pagamentos -->
         <div class="container mt-5">
             <h2>Aceitamos pagamentos</h2>
             <p>
@@ -160,7 +181,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="footer" style="background-color: #333; color: white; padding: 20px; text-align: center;">
+    <footer id="footer">
         <div>
             &copy; 2024 Metálica Colombo | Todos os direitos reservados
         </div>
@@ -169,9 +190,9 @@
         </div>
         <div>
             Links: <a href="Politica-De-Privacidade.html" style="color: white; text-decoration: underline;">Política de Privacidade</a> | 
-            <a href="Termos-De-Uso.html" style="color: white; text-decoration: underline;">Termos de Uso</a> | 
-            Versão: 1.2.0
+            <a href="Termos-De-Uso.html" style="color: white; text-decoration: underline;">Termos de Uso</a>
         </div>
     </footer>
-    
+
 </body>
+</html>
