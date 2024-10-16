@@ -1,0 +1,28 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background: linear-gradient(to right, #333, #555);
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.hover-effect:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+section {
+    padding: 60px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+}
