@@ -42,3 +42,7 @@ footer a {
 footer a:hover {
     text-decoration: none;
 }
+.payment-icons {
+    font-size: 24px; /* Tamanho dos ícones */
+    margin-right: 10px; /* Espaçamento entre os ícones */
+}
