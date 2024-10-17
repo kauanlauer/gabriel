@@ -36,9 +36,53 @@
             padding: 20px; 
             text-align: center;
         }
+
+
+
+          .modal-content {
+              border-radius: 15px; /* Cantos arredondados */
+          }
+          
+          .modal-header {
+              background-color: #007bff; /* Cor do cabeçalho */
+              color: #ffffff; /* Cor do texto */
+          }
+          
+          .modal-body {
+              background-color: #f9f9f9; /* Cor do corpo */
+          }
+          
+          .btn-primary {
+              background-color: #28a745; /* Cor do botão Aceitar */
+          }
+          
+          .btn-danger {
+              background-color: #dc3545; /* Cor do botão Não Aceitar */
+          }
+          </style>
     </style>
 </head>
 <body>
+  <!-- Modal de Aceitação dos Termos -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="termsModalLabel">Aceite os Termos de Uso</h5>
+              <button type="button" class="btn-close" aria-label="Close" id="closeModal"></button>
+          </div>
+          <div class="modal-body">
+              Ao acessar este site, você concorda com nossos 
+              <a href="Termos-De-Uso.html" target="_blank">Termos de Uso</a> e nossa 
+              <a href="Politica-De-Privacidade.html" target="_blank">Política de Privacidade</a>.
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="acceptTerms">Aceitar</button>
+              <button type="button" class="btn btn-danger" id="declineTerms">Não Aceitar</button>
+          </div>
+      </div>
+  </div>
+</div>
 
     <!-- Cabeçalho -->
     <header class="text-center py-5">
@@ -193,6 +237,32 @@
             <a href="version.html" style="color: white; text-decoration: underline;">Versão: 1.2.1</a>
         </div>
     </footer>
+
+    <script>
+      // Verifica se o usuário já aceitou os termos
+      if (!localStorage.getItem('termsAccepted')) {
+          // Mostra o modal se os termos não foram aceitos
+          var termsModal = new bootstrap.Modal(document.getElementById('termsModal'));
+          termsModal.show();
+      }
+  
+      // Adiciona evento ao botão de aceitar
+      document.getElementById('acceptTerms').addEventListener('click', function() {
+          localStorage.setItem('termsAccepted', 'true'); // Armazena que os termos foram aceitos
+          var termsModal = bootstrap.Modal.getInstance(document.getElementById('termsModal'));
+          termsModal.hide(); // Fecha o modal
+      });
+  
+      // Adiciona evento ao botão de não aceitar
+      document.getElementById('declineTerms').addEventListener('click', function() {
+          window.location.href = "https://metalicacolombo.com.br/erroTermos"; // Redireciona para a página de erro
+      });
+  
+      // Adiciona evento ao botão de fechar (X)
+      document.getElementById('closeModal').addEventListener('click', function() {
+          window.location.href = "https://metalicacolombo.com.br/erroTermos"; // Redireciona para a página de erro
+      });
+  </script>
     
 
 </body>
