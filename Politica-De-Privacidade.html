@@ -2,69 +2,211 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
-    <title>Política de Privacidade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Política de Privacidade - Metálica Colombo</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f8f8f8;
-            color: #333;
+        /* Estilos específicos para a página de Política de Privacidade */
+        .legal-section {
+            padding: 120px 0 60px;
+            background-color: var(--white);
         }
-        h1 {
-            color: #333;
+        
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
         }
-        h2 {
-            color: #555;
+        
+        .legal-content h1 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            text-align: center;
         }
-        p {
-            margin: 10px 0;
+        
+        .legal-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .legal-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .legal-content p, .legal-content ul {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .legal-content ul {
+            padding-left: 1.5rem;
+        }
+        
+        .legal-content ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .back-to-site {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .back-to-site:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+        
+        .back-to-site i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 767px) {
+            .legal-content {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+            
+            .back-to-site {
+                top: 15px;
+                left: 15px;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Destaque para itens importantes */
+        .privacy-highlight {
+            background-color: var(--primary-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+        }
+        
+        .privacy-highlight h3 {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-highlight p {
+            margin-bottom: 0;
         }
     </style>
 </head>
 <body>
+    <!-- Botão de voltar para o site -->
+    <a href="index.html" class="back-to-site">
+        <i class="fas fa-arrow-left"></i> Voltar para o site
+    </a>
 
-    <h1>Política de Privacidade</h1>
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <h1>Política de Privacidade</h1>
+                    
+                    <div class="privacy-highlight">
+                        <h3><i class="fas fa-shield-alt"></i> Compromisso com sua privacidade</h3>
+                        <p>A Metálica Colombo está comprometida em proteger suas informações pessoais e garantir a melhor experiência possível em nosso site.</p>
+                    </div>
 
-    <h2>1. Introdução</h2>
-    <p>Nós, da Metálica Colombo, respeitamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações ao visitar nosso site.</p>
+                    <h2>1. Introdução</h2>
+                    <p>Nós, da Metálica Colombo, respeitamos a sua privacidade e estamos comprometidos em proteger suas informações pessoais. Esta Política de Privacidade explica como coletamos, usamos e protegemos suas informações ao visitar nosso site.</p>
 
-    <h2>2. Informações Coletadas</h2>
-    <p>Podemos coletar as seguintes informações:</p>
-    <ul>
-        <li>Nome</li>
-        <li>E-mail</li>
-        <li>Número de telefone (WhatsApp)</li>
-        <li>Informações sobre como você usa nosso site</li>
-    </ul>
+                    <h2>2. Informações Coletadas</h2>
+                    <p>Podemos coletar as seguintes informações:</p>
+                    <ul>
+                        <li>Nome</li>
+                        <li>E-mail</li>
+                        <li>Número de telefone (WhatsApp)</li>
+                        <li>Informações sobre como você usa nosso site</li>
+                    </ul>
 
-    <h2>3. Como Usamos Suas Informações</h2>
-    <p>As informações que coletamos podem ser utilizadas para:</p>
-    <ul>
-        <li>Melhorar nosso site e serviços</li>
-        <li>Entrar em contato com você sobre nossos serviços</li>
-        <li>Enviar atualizações e promoções</li>
-    </ul>
+                    <h2>3. Como Usamos Suas Informações</h2>
+                    <p>As informações que coletamos podem ser utilizadas para:</p>
+                    <ul>
+                        <li>Melhorar nosso site e serviços</li>
+                        <li>Entrar em contato com você sobre nossos serviços</li>
+                        <li>Enviar atualizações e promoções</li>
+                    </ul>
 
-    <h2>4. Compartilhamento de Informações</h2>
-    <p>Nós não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto quando necessário para fornecer nossos serviços.</p>
+                    <h2>4. Compartilhamento de Informações</h2>
+                    <p>Nós não vendemos, trocamos ou transferimos suas informações pessoais para terceiros, exceto quando necessário para fornecer nossos serviços.</p>
 
-    <h2>5. Segurança das Informações</h2>
-    <p>Adotamos medidas de segurança adequadas para proteger suas informações pessoais. No entanto, nenhum método de transmissão pela Internet é 100% seguro.</p>
+                    <h2>5. Segurança das Informações</h2>
+                    <p>Adotamos medidas de segurança adequadas para proteger suas informações pessoais. No entanto, nenhum método de transmissão pela Internet é 100% seguro.</p>
 
-    <h2>6. Seus Direitos</h2>
-    <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para fazer isso, entre em contato conosco.</p>
+                    <h2>6. Seus Direitos</h2>
+                    <p>Você tem o direito de acessar, corrigir ou excluir suas informações pessoais. Para fazer isso, entre em contato conosco.</p>
 
-    <h2>7. Alterações nesta Política</h2>
-    <p>Podemos atualizar esta Política de Privacidade ocasionalmente. Recomendamos que você revise esta página periodicamente para estar ciente de quaisquer mudanças.</p>
+                    <h2>7. Alterações nesta Política</h2>
+                    <p>Podemos atualizar esta Política de Privacidade ocasionalmente. Recomendamos que você revise esta página periodicamente para estar ciente de quaisquer mudanças.</p>
 
-    <h2>8. Contato</h2>
-    <p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco através do WhatsApp ou e-mail.</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
+                    <h2>8. Contato</h2>
+                    <p>Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco através do WhatsApp ou e-mail.</p>
+
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary">Voltar para a página inicial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script para responsividade -->
+    <script>
+        // Fix para problemas de zoom em dispositivos móveis
+        function applyMobileViewportFix() {
+            const viewportMeta = document.querySelector('meta[name="viewport"]');
+            if (viewportMeta) {
+                viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyMobileViewportFix();
+        });
+    </script>
 </body>
 </html>

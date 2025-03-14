@@ -2,52 +2,174 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termos de Uso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Termos de Uso - Metálica Colombo</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f8f8f8;
-            color: #333;
+        /* Estilos específicos para a página de Termos */
+        .legal-section {
+            padding: 120px 0 60px;
+            background-color: var(--white);
         }
-        h1 {
-            color: #333;
+        
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            padding: 2.5rem;
         }
-        h2 {
-            color: #555;
+        
+        .legal-content h1 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            text-align: center;
         }
-        p {
-            margin: 10px 0;
+        
+        .legal-content h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .legal-content h2 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .legal-content p, .legal-content ul {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .legal-content ul {
+            padding-left: 1.5rem;
+        }
+        
+        .legal-content ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .back-to-site {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .back-to-site:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+        
+        .back-to-site i {
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 767px) {
+            .legal-content {
+                padding: 1.5rem;
+                margin: 0 1rem;
+            }
+            
+            .back-to-site {
+                top: 15px;
+                left: 15px;
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Botão de voltar para o site -->
+    <a href="index.html" class="back-to-site">
+        <i class="fas fa-arrow-left"></i> Voltar para o site
+    </a>
 
-    <h1>Termos de Uso</h1>
+    <!-- Conteúdo principal -->
+    <main>
+        <section class="legal-section">
+            <div class="container">
+                <div class="legal-content">
+                    <h1>Termos de Uso</h1>
 
-    <h2>1. Aceitação dos Termos</h2>
-    <p>Ao acessar nosso site, você concorda em cumprir estes Termos de Uso. Se não concordar com algum termo, você não deve utilizar o site.</p>
+                    <h2>1. Aceitação dos Termos</h2>
+                    <p>Ao acessar nosso site, você concorda em cumprir estes Termos de Uso. Se não concordar com algum termo, você não deve utilizar o site.</p>
 
-    <h2>2. Uso do Site</h2>
-    <p>Você concorda em usar nosso site apenas para fins legais e de acordo com as leis aplicáveis. É proibido usar o site de forma que possa danificá-lo ou comprometer sua segurança.</p>
+                    <h2>2. Uso do Site</h2>
+                    <p>Você concorda em usar nosso site apenas para fins legais e de acordo com as leis aplicáveis. É proibido usar o site de forma que possa danificá-lo ou comprometer sua segurança.</p>
 
-    <h2>3. Propriedade Intelectual</h2>
-    <p>Todo o conteúdo do site, incluindo textos, imagens e design, é de propriedade da Metálica Colombo e não pode ser reproduzido sem nossa permissão.</p>
+                    <h2>3. Propriedade Intelectual</h2>
+                    <p>Todo o conteúdo do site, incluindo textos, imagens e design, é de propriedade da Metálica Colombo e não pode ser reproduzido sem nossa permissão.</p>
 
-    <h2>4. Links Externos</h2>
-    <p>Nós não nos responsabilizamos pelo conteúdo ou práticas de privacidade de sites externos que possam estar linkados em nosso site.</p>
+                    <h2>4. Links Externos</h2>
+                    <p>Nós não nos responsabilizamos pelo conteúdo ou práticas de privacidade de sites externos que possam estar linkados em nosso site.</p>
 
-    <h2>5. Limitação de Responsabilidade</h2>
-    <p>A Metálica Colombo não será responsável por quaisquer danos decorrentes do uso ou da incapacidade de uso do site.</p>
+                    <h2>5. Limitação de Responsabilidade</h2>
+                    <p>A Metálica Colombo não será responsável por quaisquer danos decorrentes do uso ou da incapacidade de uso do site.</p>
 
-    <h2>6. Modificações dos Termos</h2>
-    <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. É sua responsabilidade revisar estes termos periodicamente.</p>
+                    <h2>6. Modificações dos Termos</h2>
+                    <p>Reservamo-nos o direito de modificar estes Termos de Uso a qualquer momento. É sua responsabilidade revisar estes termos periodicamente.</p>
 
-    <h2>7. Contato</h2>
-    <p>Se você tiver alguma dúvida sobre estes Termos de Uso, entre em contato conosco através do WhatsApp ou e-mail.</p>
+                    <h2>7. Contato</h2>
+                    <p>Se você tiver alguma dúvida sobre estes Termos de Uso, entre em contato conosco através do WhatsApp ou e-mail.</p>
 
+                    <div class="text-center mt-5">
+                        <a href="index.html" class="btn btn-primary">Voltar para a página inicial</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script para responsividade -->
+    <script>
+        // Fix para problemas de zoom em dispositivos móveis
+        function applyMobileViewportFix() {
+            const viewportMeta = document.querySelector('meta[name="viewport"]');
+            if (viewportMeta) {
+                viewportMeta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            applyMobileViewportFix();
+        });
+    </script>
 </body>
 </html>
