@@ -1,184 +1,343 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="Fotos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="ng.css">
-    <style>
-         /* Estilos para o menu lateral */
-         .sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #11111152;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 20px;
-        }
-
-        .sidebar a {
-            padding: 15px 25px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #ffffff;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidebar a:hover {
-            color: #f1f1f1;
-        }
-
-        /* Estilos para o botão de menu */
-        #menu-btn {
-            font-size: 20px;
-            cursor: pointer;
-            position: fixed;
-            top: 15px;
-            left: 15px;
-            z-index: 2;
-            color: #fff;
-        }
-
-        /* Estilos para os botões do cabeçalho */
-        .header-buttons {
-            display: flex;
-            flex-direction: column; /* Alteração aqui para alinhar os botões verticalmente */
-            gap: 10px;
-            align-items: center; /* Alinhamento centralizado dos botões */
-        }
-
-        .header-button {
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background-color: transparent;
-            color: #000000;
-            border: 2px solid #ffffff00;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .header-button:hover {
-            background-color: rgba(0, 0, 0, 0.322);
-        }
-
-        /* Adicione outros estilos conforme necessário */
-    </style>
-   <!-- Adicione outras configurações do head aqui -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Quem Somos - Metálica Colombo</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animate On Scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <span id="menu-btn">&#9776; Menu</span>
-        <br>
-        <br>
-        <div class="sidebar" id="mySidebar">
-            <br>
-            <br>
-            <br>
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=554197602279&text=Gostaria+de+fazer+um+or%C3%A7amento%21" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Solicitar orçamento</span>
+    </a>
 
-            <a href="index.html" class="logo"> Metálica <span> Colombo</span></a>
-            <div class="header-buttons">
-                <a href="#item" class="header-button">Nosso Serviço</a>
-                <a href="#contato" class="header-button">Contato</a>
-                <a href="orçamento.html" class="header-button">Orçamento</a>
-                <a href="galeria.html" class="header-button">Galeria</a>
-            </div>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="overlay"></div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#hero">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#servicos">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="QuemSomos.html">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="galeria.html">Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#contato">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html#contato" class="btn btn-primary ms-lg-3">Orçamento</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
-    
-    <main>
-        <section class="inicio">
-            <div class="txt_inicio">
-                <h1>QUEM <span> SOMOS ?</span></h1>
-                <h1>METÁLICA<span> DE RESPEITO!</span> <span></span></h1>
-                <span></span>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <h1>Quem <span class="highlight">Somos</span></h1>
+                        <p>Metálica de respeito, construindo com qualidade e compromisso há mais de 15 anos</p>
+                    </div>
+                </div>
             </div>
-        </section>    
-        <section class="letreiro">
-           <p>Somos bons no que fazemos e felizes no que construímos juntos.</p>
-        </section>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,165.3C672,171,768,149,864,149.3C960,149,1056,171,1152,176C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </section>
 
-        </section>
-        <h2>Sobre nós</h2>
-            <H3>Somos uma empresa especializada em fabricação e instalação de produtos metálicos, garantindo qualidade e durabilidade.
+    <!-- Mission Statement -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto text-center" data-aos="fade-up">
+                    <h2 class="display-5 fw-bold mb-4">"Somos bons no que fazemos e felizes no que construímos juntos."</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                Temos anos de experiência atendendo clientes em todo o sul do Brasil, proporcionando soluções em serralheria com compromisso, confiabilidade e preços justos.
+    <!-- About Us Section -->
+    <section class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="Fotos/fundo.png" alt="Equipe Metálica Colombo" class="img-fluid rounded-4 shadow">
+                        <div class="about-experience">
+                            <span class="experience-number">15+</span>
+                            <span class="experience-text">Anos de experiência</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <h2>Nossa <span class="highlight">História</span></h2>
+                        </div>
+                        <p class="mb-4">Somos uma empresa especializada em fabricação e instalação de produtos metálicos, garantindo qualidade e durabilidade em cada projeto que realizamos.</p>
+                        
+                        <p class="mb-4">Temos anos de experiência atendendo clientes em todo o sul do Brasil, proporcionando soluções em serralheria com compromisso, confiabilidade e preços justos.</p>
+                        
+                        <p class="mb-4">Nossa equipe viaja extensivamente para realizar obras e levar o melhor da Metálica Colombo a diferentes regiões.</p>
+                        
+                        <p>Garantimos que nosso trabalho é feito com maestria, oferecendo produtos que atendem às necessidades de nossos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="services-section py-5">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Nossos <span class="highlight">Valores</span></h2>
+                <p>O que nos define como empresa e profissionais</p>
+            </div>
+            <div class="row g-4">
+                <!-- Valor 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Qualidade</h3>
+                        <p>Trabalhamos com os melhores materiais e técnicas para garantir a durabilidade e resistência de todas as nossas estruturas.</p>
+                    </div>
+                </div>
                 
-                Nossa equipe viaja extensivamente para realizar obras e levar o melhor da Metálica Colombo a diferentes regiões.
+                <!-- Valor 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Compromisso</h3>
+                        <p>Cumprimos prazos e acordos, mantendo a transparência em todas as etapas do projeto e atendimento.</p>
+                    </div>
+                </div>
                 
-                Garantimos que nosso trabalho é feito com maestria, oferecendo produtos que atendem às necessidades de nossos clientes.</H3>
-        <section class="contato">
-           
-            <a class="instagram-link" aria-label="Visite nosso Instagram" href="https://www.instagram.com/metalicacolombo?igshid=dDRiNTR4dXh4dGk1" target="_blank">
-                <img class="instagram" alt="Visite nosso Instagram" src="./Logos/instagram.png">
-            </a>
-            <a class="whatsapp-link" id="zap" aria-label="Chat on WhatsApp" href="https://wa.me/554197602279?%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20text=Gostaria%20de%20fazer%20um%20or%C3%A7amento!" target="_blank">
-                <img class="whatsapp" alt="Chat on WhatsApp" src="Logos/icon-whatsapp.png">
-            </a>
-            
-        </section>
-        
-    </main>
-    <footer>
-        <p class="sobrenos">© 2023 Metálica Colombo. Todos os direitos reservados. <h6>CNJP  51.747.391/0001-43</h6> <br> <a href="https://www.instagram.com/erickkauanlauer/" target="_blank">Desenvolvido por Kauan Lauer</a></p>
+                <!-- Valor 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Inovação</h3>
+                        <p>Buscamos constantemente novas técnicas e soluções para oferecer o melhor em estruturas metálicas para nossos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (Opcional) -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Nossa <span class="highlight">Equipe</span></h2>
+                <p>Profissionais dedicados que fazem a Metálica Colombo acontecer</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="text-center mb-4">
+                            <img src="Fotos/imagem (10).jpg" alt="Profissional Metálica Colombo" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content text-center">
+                            <h5>Equipe de Projeto</h5>
+                            <p>Nossos projetistas trabalham para criar soluções sob medida para cada cliente, garantindo estruturas seguras e funcionais.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="text-center mb-4">
+                            <img src="Fotos/imagem (10).jpg" alt="Profissional Metálica Colombo" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content text-center">
+                            <h5>Equipe de Produção</h5>
+                            <p>Serralheiros experientes que transformam projetos em realidade com precisão e qualidade incomparável.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="text-center mb-4">
+                            <img src="Fotos/imagem (10).jpg" alt="Profissional Metálica Colombo" class="img-fluid rounded-circle" style="width: 120px; height: 120px; object-fit: cover;">
+                        </div>
+                        <div class="testimonial-content text-center">
+                            <h5>Equipe de Instalação</h5>
+                            <p>Montadores qualificados que garantem a instalação correta e segura de todas as nossas estruturas metálicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-wrapper text-center" data-aos="zoom-in">
+                <h2>Vamos trabalhar juntos no seu próximo projeto?</h2>
+                <p>Entre em contato conosco para um orçamento personalizado.</p>
+                <div class="mt-4">
+                    <a href="index.html#contato" class="btn btn-light btn-lg me-3">Solicitar orçamento</a>
+                    <a href="galeria.html" class="btn btn-outline btn-lg">Ver nossa galeria</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-info">
+                            <div class="footer-logo">
+                                <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                            </div>
+                            <p>Especializados em estruturas metálicas para residências, comércios e indústrias em Curitiba e região.</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/metalicacolombo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://api.whatsapp.com/send/?phone=554197602279" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-links">
+                            <h5>Links Rápidos</h5>
+                            <ul>
+                                <li><a href="index.html#hero">Início</a></li>
+                                <li><a href="index.html#servicos">Serviços</a></li>
+                                <li><a href="QuemSomos.html">Quem Somos</a></li>
+                                <li><a href="galeria.html">Galeria</a></li>
+                                <li><a href="index.html#contato">Contato</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-links">
+                            <h5>Informações Legais</h5>
+                            <ul>
+                                <li><a href="Termos-De-Uso.html">Termos de Uso</a></li>
+                                <li><a href="Politica-De-Privacidade.html">Política de Privacidade</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Metálica Colombo | CNPJ: 51.747.391/0001-43</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="developer-info">
+                            Desenvolvido por <a href="https://kauanlauer.com.br/" target="_blank" class="developer-link">Kauan Lauer</a>
+                            <span class="developer-contact">
+                                <a href="https://api.whatsapp.com/send/?phone=5541999426605" target="_blank" class="developer-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> (41) 99942-6605
+                                </a>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-   <!-- Adicione o código do anúncio abaixo -->
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-   crossorigin="anonymous"></script>
 
-<script>
-  document.getElementById("menu-btn").addEventListener("click", function() {
-      toggleSidebar();
-  });
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Script Principal -->
+    <script>
+        // Inicialização do AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
 
-  function toggleSidebar() {
-      var sidebar = document.getElementById("mySidebar");
-      if (sidebar.style.width === "250px") {
-          sidebar.style.width = "0";
-      } else {
-          sidebar.style.width = "250px";
-      }
-  }
+        // Toggle do menu mobile
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                navbarCollapse.classList.toggle('show');
+            });
+            
+            // Fechar o menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .btn');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth < 992) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                });
+            });
+            
+            // Fechar o menu ao clicar fora dele
+            document.addEventListener('click', function(event) {
+                const isClickInsideNavbar = navbarToggler.contains(event.target) || 
+                                          navbarCollapse.contains(event.target);
+                if (!isClickInsideNavbar && navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                }
+            });
+        }
 
-  window.onclick = function(event) {
-      var sidebar = document.getElementById("mySidebar");
-      if (event.target !== sidebar && event.target.id !== "menu-btn") {
-          sidebar.style.width = "0";
-      }
-  };
-    $(document).ready(function(){
-      $('.slider').slick({
-          slidesToShow: 3, // Quantidade de imagens visíveis ao mesmo tempo
-          slidesToScroll: 1, // Quantidade de imagens a serem roladas
-          autoplay: true, // Ativa o autoplay
-          autoplaySpeed: 2000, // Velocidade do autoplay em milissegundos
-          dots: true, // Mostra os pontos de navegação
-          arrows: true, // Mostra as setas de navegação
-          prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-          nextArrow: '<button type="button" class="slick-next">Next</button>',
-          responsive: [
-              {
-                  breakpoint: 768, // Mudança de layout em telas menores
-                  settings: {
-                      slidesToShow: 2
-                  }
-              },
-              {
-                  breakpoint: 480, // Mudança de layout em telas ainda menores
-                  settings: {
-                      slidesToShow: 1
-                  }
-              }
-          ]
-      });
-  });
-</script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        // Adicionar classe 'sticky' ao header quando rolar a página
+        const header = document.getElementById('header');
+        if (header) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
