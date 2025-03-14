@@ -4,270 +4,682 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metálica Colombo - Estruturas Metálicas em Curitiba</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f8f8f8;
-        }
-        header {
-            background-color: #333;
-            color: white;
-        }
-        h1, h2 {
-            font-family: 'Oswald', sans-serif;
-        }
-        .card {
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .payment-icons {
-            font-size: 24px; 
-            margin-right: 10px; 
-        }
-        footer {
-            background-color: #333; 
-            color: white; 
-            padding: 20px; 
-            text-align: center;
-        }
-
-
-
-          .modal-content {
-              border-radius: 15px; /* Cantos arredondados */
-          }
-          
-          .modal-header {
-              background-color: #007bff; /* Cor do cabeçalho */
-              color: #ffffff; /* Cor do texto */
-          }
-          
-          .modal-body {
-              background-color: #f9f9f9; /* Cor do corpo */
-          }
-          
-          .btn-primary {
-              background-color: #28a745; /* Cor do botão Aceitar */
-          }
-          
-          .btn-danger {
-              background-color: #dc3545; /* Cor do botão Não Aceitar */
-          }
-          </style>
-    </style>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animate On Scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Modal de Aceitação dos Termos -->
-<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="termsModalLabel">Aceite os Termos de Uso</h5>
-              <button type="button" class="btn-close" aria-label="Close" id="closeModal"></button>
-          </div>
-          <div class="modal-body">
-              Ao acessar este site, você concorda com nossos 
-              <a href="Termos-De-Uso.html" target="_blank">Termos de Uso</a> e nossa 
-              <a href="Politica-De-Privacidade.html" target="_blank">Política de Privacidade</a>.
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" id="acceptTerms">Aceitar</button>
-              <button type="button" class="btn btn-danger" id="declineTerms">Não Aceitar</button>
-          </div>
-      </div>
-  </div>
-</div>
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://api.whatsapp.com/send/?phone=554197602279&text=Gostaria+de+fazer+um+or%C3%A7amento%21" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Solicitar orçamento</span>
+    </a>
 
-    <!-- Cabeçalho -->
-    <header class="text-center py-5">
-        <h1 class="animate__animated animate__fadeInDown">Metálica Colombo</h1>
-        <p class="lead animate__animated animate__fadeIn">Especializados em estruturas metálicas em Curitiba e região.</p>
-        <p class="h5">Solicite seu orçamento agora!</p>
-        <a href="#contato" class="btn btn-warning btn-lg animate__animated animate__bounce">Faça um orçamento hoje mesmo!</a>
-        <br><br>
-        <a href="galeria.html" class="btn btn-secondary btn-lg">Visite Nossa Galeria</a>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="overlay"></div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#hero">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#servicos">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#sobre">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="galeria.html">Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contato">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#contato" class="btn btn-primary ms-lg-3">Orçamento</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- Seção Sobre Nós -->
-    <section id="sobre" class="py-5 bg-light text-center">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background"></div>
         <div class="container">
-            <h2 class="mb-4">Sobre Nós</h2>
-            <p>Na Metálica Colombo, oferecemos soluções em estruturas metálicas com qualidade e confiança. Nossa missão é atender às suas necessidades com excelência e inovação.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-content">
+                        <h1>Transforme seu espaço com <span class="highlight">estruturas metálicas</span> de qualidade</h1>
+                        <p>Soluções personalizadas em estruturas metálicas para Curitiba e região, com excelência e inovação.</p>
+                        <div class="hero-cta">
+                            <a href="#contato" class="btn btn-primary btn-lg me-3">Solicitar orçamento</a>
+                            <a href="galeria.html" class="btn btn-outline btn-lg">Ver projetos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1621187377688-16b5e266c927" alt="Estrutura metálica" class="img-fluid rounded-4 shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffffff" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,122.7C384,128,480,160,576,165.3C672,171,768,149,864,149.3C960,149,1056,171,1152,176C1248,181,1344,171,1392,165.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
         </div>
     </section>
 
-    <!-- Seção de Serviços -->
-    <section id="servicos" class="py-5 bg-light">
+    <!-- Estatísticas -->
+    <section class="stats-section">
         <div class="container">
-            <h2 class="text-center mb-4 animate__animated animate__fadeIn">Conheça Nossos Serviços</h2>
-            <div class="row">
-
-                <!-- Grades -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-shield-alt"></i> Grades</h5>
-                            <p class="card-text">Oferecemos grades de segurança em aço, ideais para proteger sua propriedade e garantir a estética do ambiente.</p>
+            <div class="row justify-content-center text-center">
+                <div class="col-md-4 col-sm-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-check-circle"></i>
                         </div>
+                        <div class="stat-number count-up" data-count="500">0</div>
+                        <div class="stat-title">Projetos concluídos</div>
                     </div>
                 </div>
-
-                <!-- Mezaninos -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-building"></i> Mezaninos</h5>
-                            <p class="card-text">Construímos mezaninos sob medida, otimizando espaços e proporcionando soluções práticas para sua empresa ou residência.</p>
+                <div class="col-md-4 col-sm-6 mb-4 mb-md-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
                         </div>
+                        <div class="stat-number count-up" data-count="400">0</div>
+                        <div class="stat-title">Clientes satisfeitos</div>
                     </div>
                 </div>
-
-                <!-- Coberturas -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-umbrella"></i> Coberturas</h5>
-                            <p class="card-text">Desenvolvemos coberturas em ferro e metal, garantindo proteção contra intempéries e durabilidade.</p>
+                <div class="col-md-4 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
                         </div>
+                        <div class="stat-number count-up" data-count="15">0</div>
+                        <div class="stat-title">Anos de experiência</div>
                     </div>
                 </div>
-
-                <!-- Barracões -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-warehouse"></i> Barracões</h5>
-                            <p class="card-text">Estruturas metálicas robustas para barracões, ideais para armazenamento e atividades comerciais.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portões -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-gate"></i> Portões</h5>
-                            <p class="card-text">Fabricamos portões personalizados em aço, oferecendo segurança e estilo para sua entrada.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Calhas -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-tint"></i> Calhas</h5>
-                            <p class="card-text">Produzimos calhas em aço para drenagem eficiente, evitando problemas de infiltração.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gradil -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-fence"></i> Gradil</h5>
-                            <p class="card-text">Oferecemos gradis em aço que combinam segurança e estética, perfeitos para áreas externas.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Guarda Corpo -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-hand-holding-heart"></i> Guarda Corpo</h5>
-                            <p class="card-text">Instalamos guarda corpos em aço, garantindo segurança em escadas e varandas com design moderno.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Outdoor -->
-                <div class="col-md-4 text-center mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-bullhorn"></i> Outdoor</h5>
-                            <p class="card-text">Criamos estruturas para outdoors que destacam sua marca, combinando durabilidade e visibilidade.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div> <!-- .row -->
-        </div> <!-- .container -->
+            </div>
+        </div>
     </section>
 
-    <!-- Seção de Contato -->
-    <section id='contato' class='py-5 bg-dark text-white text-center'>
-        <h2>Entre em Contato</h2><br />
-        <a href="#" onclick='window.open("https://api.whatsapp.com/send/?phone=554197602279&text=Gostaria+de+fazer+um+or%C3%A7amento%21&type=phone_number&app_absent=0", "_blank")' class='btn btn-success mr-2'>
-            Chat no WhatsApp
-        </a>
-        <a href="#" onclick='window.open("https://www.instagram.com/metalicacolombo/", "_blank")' class='btn btn-light'>
-            Instagram
-        </a>
-
-        <div class="container mt-5">
-            <h2>Aceitamos pagamentos</h2>
-            <p>
-                <i class="fas fa-credit-card payment-icons"></i> Cartão de Crédito |
-                <i class="fas fa-money-bill-wave payment-icons"></i> Cartão de Débito |
-                <i class="fas fa-money-check-alt payment-icons"></i> PIX |
-                <i class="fas fa-dollar-sign payment-icons"></i> Dinheiro
-            </p>
+    <!-- Serviços -->
+    <section id="servicos" class="services-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Nossos <span class="highlight">Serviços</span></h2>
+                <p>Oferecemos diversas soluções em estruturas metálicas para atender às suas necessidades</p>
+            </div>
+            <div class="row g-4">
+                <!-- Serviço 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Mezaninos</h3>
+                        <p>Construímos mezaninos sob medida, otimizando espaços e proporcionando soluções práticas para sua empresa ou residência.</p>
+                    </div>
+                </div>
+                
+                <!-- Serviço 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-umbrella"></i>
+                        </div>
+                        <h3>Coberturas</h3>
+                        <p>Desenvolvemos coberturas em ferro e metal, garantindo proteção contra intempéries e durabilidade.</p>
+                    </div>
+                </div>
+                
+                <!-- Serviço 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3>Barracões</h3>
+                        <p>Estruturas metálicas robustas para barracões, ideais para armazenamento e atividades comerciais.</p>
+                    </div>
+                </div>
+                
+                <!-- Serviço 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3>Portões</h3>
+                        <p>Fabricamos portões personalizados em aço, oferecendo segurança e estilo para sua entrada.</p>
+                    </div>
+                </div>
+                
+                <!-- Serviço 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Grades</h3>
+                        <p>Oferecemos grades de segurança em aço, ideais para proteger sua propriedade e garantir a estética do ambiente.</p>
+                    </div>
+                </div>
+                
+                <!-- Serviço 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h3>Guarda Corpo</h3>
+                        <p>Instalamos guarda corpos em aço, garantindo segurança em escadas e varandas com design moderno.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </section>
 
-    <footer id="footer" style="background-color: #333; color: white; padding: 20px; text-align: center;">
-        <div>
-            &copy; 2024 Metálica Colombo | Todos os direitos reservados
+    <!-- Sobre Nós -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1 order-2" data-aos="fade-right">
+                    <div class="about-content">
+                        <div class="section-header">
+                            <h2>Sobre a <span class="highlight">Metálica Colombo</span></h2>
+                        </div>
+                        <p>Somos uma empresa especializada em fabricação e instalação de produtos metálicos, garantindo qualidade e durabilidade.</p>
+                        <p>Temos anos de experiência atendendo clientes em todo o sul do Brasil, proporcionando soluções em serralheria com compromisso, confiabilidade e preços justos.</p>
+                        <p>Nossa equipe viaja extensivamente para realizar obras e levar o melhor da Metálica Colombo a diferentes regiões.</p>
+                        <p>Garantimos que nosso trabalho é feito com maestria, oferecendo produtos que atendem às necessidades de nossos clientes.</p>
+                        <div class="mt-4">
+                            <a href="QuemSomos.html" class="btn btn-outline">Saiba mais</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-1 mb-5 mb-lg-0" data-aos="fade-left">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1517583010307-3f789911b89c" alt="Trabalhadores da Metálica Colombo" class="img-fluid rounded-4 shadow">
+                        <div class="about-experience">
+                            <span class="experience-number">15+</span>
+                            <span class="experience-text">Anos de experiência</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            CNPJ: 51.747.391/0001-43 | Desenvolvido por Kauan Lauer
+    </section>
+
+    <!-- Projetos destaques (Prévia da Galeria) -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Nossos <span class="highlight">Projetos</span></h2>
+                <p>Conheça alguns dos nossos trabalhos recentes</p>
+            </div>
+            <div class="row g-4 gallery-preview">
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1610333885505-9ed42fc0eefd" alt="Estrutura Metálica" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Cobertura Industrial</h4>
+                            <a href="galeria.html" class="gallery-icon">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1565770100379-28a80a933ef1" alt="Portão" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Portão Residencial</h4>
+                            <a href="galeria.html" class="gallery-icon">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Mezanino" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <h4>Mezanino Comercial</h4>
+                            <a href="galeria.html" class="gallery-icon">
+                                <i class="fas fa-plus"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="galeria.html" class="btn btn-primary btn-lg">Ver todos os projetos</a>
+            </div>
         </div>
-        <div>
-            <a href="Politica-De-Privacidade.html" style="color: white; text-decoration: underline;">Política de Privacidade</a> | 
-            <a href="Termos-De-Uso.html" style="color: white; text-decoration: underline;">Termos de Uso</a> | 
-            <a href="version.html" style="color: white; text-decoration: underline;">Versão: 1.2.1</a>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>O que nossos <span class="highlight">clientes</span> dizem</h2>
+                <p>A satisfação de nossos clientes é nossa maior prioridade</p>
+            </div>
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Excelente trabalho na instalação do meu portão. Acabamento impecável e prazo cumprido à risca. Recomendo a todos."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-info">
+                                    <h5>Carlos Silva</h5>
+                                    <span>Curitiba, PR</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Contratei a Metálica Colombo para a construção de um mezanino na minha loja. Trabalho profissional e preço justo."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-info">
+                                    <h5>Ana Paula Ferreira</h5>
+                                    <span>São José dos Pinhais, PR</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"Já é a terceira vez que contrato os serviços da Metálica Colombo. Qualidade consistente e atendimento de primeira."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="testimonial-author-info">
+                                    <h5>Marcelo Santos</h5>
+                                    <span>Colombo, PR</span>
+                                </div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-wrapper text-center" data-aos="zoom-in">
+                <h2>Pronto para transformar seu espaço?</h2>
+                <p>Entre em contato conosco hoje mesmo e solicite um orçamento sem compromisso.</p>
+                <a href="#contato" class="btn btn-light btn-lg mt-4">Solicitar orçamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-up">
+                <h2>Entre em <span class="highlight">Contato</span></h2>
+                <p>Estamos prontos para atender você</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-info">
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>WhatsApp</h5>
+                                    <p><a href="https://api.whatsapp.com/send/?phone=554197602279" target="_blank">(41) 9760-2279</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Instagram</h5>
+                                    <p><a href="https://www.instagram.com/metalicacolombo/" target="_blank">@metalicacolombo</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h5>Área de Atendimento</h5>
+                                    <p>Curitiba e Região Metropolitana</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-methods">
+                            <h5>Formas de Pagamento</h5>
+                            <div class="payment-icons">
+                                <i class="fas fa-credit-card" title="Cartão de Crédito"></i>
+                                <i class="fas fa-money-bill-wave" title="Cartão de Débito"></i>
+                                <i class="fab fa-pix" title="PIX"></i>
+                                <i class="fas fa-money-check-alt" title="Transferência Bancária"></i>
+                                <i class="fas fa-dollar-sign" title="Dinheiro"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-form">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="228a415b-7a3c-4dda-a183-3428a0988ce9">
+                            <input type="hidden" name="subject" value="Novo contato do site Metálica Colombo">
+                            <input type="checkbox" name="botcheck" class="d-none">
+                            
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefone/WhatsApp</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Serviço de Interesse</label>
+                                <select class="form-select" id="service" name="service" required>
+                                    <option value="" selected disabled>Selecione um serviço</option>
+                                    <option value="Mezaninos">Mezaninos</option>
+                                    <option value="Coberturas">Coberturas</option>
+                                    <option value="Barracões">Barracões</option>
+                                    <option value="Portões">Portões</option>
+                                    <option value="Grades">Grades</option>
+                                    <option value="Calhas">Calhas</option>
+                                    <option value="Gradil">Gradil</option>
+                                    <option value="Guarda Corpo">Guarda Corpo</option>
+                                    <option value="Outdoor">Outdoor</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" id="submitBtn" class="btn btn-primary w-100">Enviar Mensagem</button>
+                                <div id="result" class="mt-3"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-info">
+                            <div class="footer-logo">
+                                <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                            </div>
+                            <p>Especializados em estruturas metálicas para residências, comércios e indústrias em Curitiba e região.</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/metalicacolombo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://api.whatsapp.com/send/?phone=554197602279" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-links">
+                            <h5>Links Rápidos</h5>
+                            <ul>
+                                <li><a href="#hero">Início</a></li>
+                                <li><a href="#servicos">Serviços</a></li>
+                                <li><a href="#sobre">Quem Somos</a></li>
+                                <li><a href="galeria.html">Galeria</a></li>
+                                <li><a href="#contato">Contato</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-links">
+                            <h5>Informações Legais</h5>
+                            <ul>
+                                <li><a href="Termos-De-Uso.html">Termos de Uso</a></li>
+                                <li><a href="Politica-De-Privacidade.html">Política de Privacidade</a></li>
+                                <li><a href="version.html">Versão: 2.0.0</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Metálica Colombo | CNPJ: 51.747.391/0001-43</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Desenvolvido por Kauan Lauer</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
 
+    <!-- Cookies Consent -->
+    <div class="cookies-consent" id="cookiesConsent">
+        <div class="container">
+            <div class="cookies-content">
+                <p>Ao acessar este site, você concorda com nossos <a href="Termos-De-Uso.html" target="_blank">Termos de Uso</a> e <a href="Politica-De-Privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+                <div class="cookies-buttons">
+                    <button id="acceptCookies" class="btn btn-primary">Aceitar</button>
+                    <button id="declineCookies" class="btn btn-outline">Recusar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Script Principal -->
     <script>
-      // Verifica se o usuário já aceitou os termos
-      if (!localStorage.getItem('termsAccepted')) {
-          // Mostra o modal se os termos não foram aceitos
-          var termsModal = new bootstrap.Modal(document.getElementById('termsModal'));
-          termsModal.show();
-      }
-  
-      // Adiciona evento ao botão de aceitar
-      document.getElementById('acceptTerms').addEventListener('click', function() {
-          localStorage.setItem('termsAccepted', 'true'); // Armazena que os termos foram aceitos
-          var termsModal = bootstrap.Modal.getInstance(document.getElementById('termsModal'));
-          termsModal.hide(); // Fecha o modal
-      });
-  
-      // Adiciona evento ao botão de não aceitar
-      document.getElementById('declineTerms').addEventListener('click', function() {
-          window.location.href = "https://metalicacolombo.com.br/erroTermos"; // Redireciona para a página de erro
-      });
-  
-      // Adiciona evento ao botão de fechar (X)
-      document.getElementById('closeModal').addEventListener('click', function() {
-          window.location.href = "https://metalicacolombo.com.br/erroTermos"; // Redireciona para a página de erro
-      });
-  </script>
-    
+        // Inicialização do AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
 
+        // Adicionar classe 'sticky' ao cabeçalho ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Destacar item de navegação ao rolar
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + sectionId) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+
+        // Animação de contagem para os números estatísticos
+        function animateCountUp() {
+            const counters = document.querySelectorAll('.count-up');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000; // Duração em milissegundos
+                const step = target / (duration / 16); // 60 FPS -> 16ms por frame
+                
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += step;
+                    counter.textContent = Math.floor(current);
+                    
+                    if (current >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 16);
+            });
+        }
+
+        // Iniciar animação de contagem quando os elementos estiverem visíveis
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    animateCountUp();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.count-up').forEach(counter => {
+            observer.observe(counter);
+        });
+
+        // Gerenciamento de consentimento de cookies
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiesConsent = document.getElementById('cookiesConsent');
+            
+            // Verificar se o usuário já aceitou os cookies anteriormente
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookiesConsent.style.display = 'block';
+                }, 1000);
+            }
+            
+            // Botão Aceitar
+            document.getElementById('acceptCookies').addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookiesConsent.style.display = 'none';
+            });
+            
+            // Botão Recusar
+            document.getElementById('declineCookies').addEventListener('click', function() {
+                window.location.href = 'erroTermos.html';
+            });
+        });
+
+        // Formulário de contato com Web3Forms
+        const form = document.getElementById('contactForm');
+        const result = document.getElementById('result');
+        const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Enviando...';
+
+            const formData = new FormData(form);
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    result.innerHTML = '<div class="alert alert-success">Mensagem enviada com sucesso! Entraremos em contato em breve.</div>';
+                    form.reset();
+                } else {
+                    result.innerHTML = '<div class="alert alert-danger">Ocorreu um erro. Por favor, tente novamente.</div>';
+                }
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Enviar Mensagem';
+                
+                // Ocultar a mensagem após 5 segundos
+                setTimeout(() => {
+                    result.innerHTML = '';
+                }, 5000);
+            })
+            .catch(error => {
+                result.innerHTML = '<div class="alert alert-danger">Ocorreu um erro. Por favor, tente novamente.</div>';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Enviar Mensagem';
+                
+                // Ocultar a mensagem após 5 segundos
+                setTimeout(() => {
+                    result.innerHTML = '';
+                }, 5000);
+            });
+        });
+    </script>
 </body>
 </html>
