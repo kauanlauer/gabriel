@@ -60,6 +60,107 @@
     --border-radius-full: 9999px;
 }
 
+/* ======= Header & Navigation ======= */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: var(--transition);
+}
+
+#header.sticky {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: var(--shadow);
+    padding: 0.5rem 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo-text .highlight {
+    color: var(--primary);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-nav .nav-item {
+    margin-left: 0.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--gray-700);
+    padding: 0.5rem 1rem;
+    transition: var(--transition-fast);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+.navbar-nav .btn {
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--white);
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+    }
+    
+    .navbar-nav .nav-item {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .navbar-nav .btn {
+        margin-top: 0.5rem;
+        display: inline-block;
+    }
+}
+
+/* Estilos específicos do header para a página de galeria */
+#header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    z-index: -1;
+}
+
 .gallery-header {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('Fotos/fundo.png');
     background-size: cover;
@@ -81,6 +182,10 @@
     font-weight: 700;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-header h1 .highlight {
+    color: var(--primary);
 }
 
 .gallery-header p {
@@ -382,6 +487,7 @@
     position: relative;
     z-index: 2;
 }
+
 /* ======= Footer Section ======= */
 .footer-section {
     background-color: var(--secondary-dark);
@@ -539,7 +645,7 @@
     opacity: 0.9;
 }
 
-/* Botão flutuante do WhatsApp que estava faltando */
+/* Botão flutuante do WhatsApp */
 .whatsapp-float {
     position: fixed;
     bottom: 30px;
@@ -595,6 +701,53 @@
     opacity: 1;
     visibility: visible;
     top: -50px;
+}
+
+/* Botão principal */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--gray-700);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-outline:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-400);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.btn-light {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--primary);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-light:hover {
+    background-color: var(--gray-100);
+    border-color: var(--gray-100);
+    color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
 }
     </style>
 </head>
