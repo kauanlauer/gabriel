@@ -1262,3 +1262,47 @@ section {
 .count-up.animate {
     opacity: 1;
 }
+
+/* Estilos para a seção do desenvolvedor no footer */
+.developer-info {
+    font-size: 0.95rem;
+    color: var(--gray-400);
+}
+
+.developer-link {
+    color: var(--primary);
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.developer-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.developer-contact {
+    display: block;
+    margin-top: 5px;
+}
+
+.developer-whatsapp {
+    color: #25D366;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.developer-whatsapp:hover {
+    color: var(--white);
+}
+
+.developer-whatsapp i {
+    margin-right: 5px;
+}
+
+@media (max-width: 767.98px) {
+    .developer-info {
+        margin-top: 10px;
+    }
+}

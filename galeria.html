@@ -749,6 +749,49 @@
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
+/* Estilos para a seção do desenvolvedor no footer */
+.developer-info {
+    font-size: 0.95rem;
+    color: var(--gray-400);
+}
+
+.developer-link {
+    color: var(--primary);
+    font-weight: 600;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.developer-link:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.developer-contact {
+    display: block;
+    margin-top: 5px;
+}
+
+.developer-whatsapp {
+    color: #25D366;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.developer-whatsapp:hover {
+    color: var(--white);
+}
+
+.developer-whatsapp i {
+    margin-right: 5px;
+}
+
+@media (max-width: 767.98px) {
+    .developer-info {
+        margin-top: 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1093,7 +1136,14 @@
                         <p>&copy; 2025 Metálica Colombo | CNPJ: 51.747.391/0001-43</p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <p>Desenvolvido por Kauan Lauer</p>
+                        <p class="developer-info">
+                            Desenvolvido por <a href="https://kauanlauer.com.br/" target="_blank" class="developer-link">Kauan Lauer</a>
+                            <span class="developer-contact">
+                                <a href="https://api.whatsapp.com/send/?phone=5541999426605" target="_blank" class="developer-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> (41) 99942-6605
+                                </a>
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
