@@ -3,144 +3,876 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Fotos - Metálica Colombo</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
+    <title>Galeria - Metálica Colombo</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animate On Scroll -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Fancybox CSS para o carrossel de imagens -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+     <style>
+      /* Estilos específicos para a galeria */
+/* ======= Variables ======= */
+:root {
+    /* Cores */
+    --primary: #EF4444;
+    --primary-dark: #B91C1C;
+    --primary-light: #FEE2E2;
+    --secondary: #1F2937;
+    --secondary-dark: #111827;
+    --accent: #F59E0B;
+    --dark: #111827;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-300: #D1D5DB;
+    --gray-400: #9CA3AF;
+    --gray-500: #6B7280;
+    --gray-600: #4B5563;
+    --gray-700: #374151;
+    --gray-800: #1F2937;
+    --gray-900: #111827;
+    --white: #FFFFFF;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transições */
+    --transition-fast: all 0.2s ease;
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+    
+    /* Bordas */
+    --border-radius-sm: 0.25rem;
+    --border-radius: 0.5rem;
+    --border-radius-md: 0.75rem;
+    --border-radius-lg: 1rem;
+    --border-radius-xl: 1.5rem;
+    --border-radius-2xl: 2rem;
+    --border-radius-full: 9999px;
+}
+
+.gallery-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('Fotos/fundo.png');
+    background-size: cover;
+    background-position: center;
+    padding: 160px 0 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-header h1 {
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-transform: none;
+    z-index: 2;
+    position: relative;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-header p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-header .btn {
+    position: relative;
+    z-index: 2;
+}
+
+.gallery-section {
+    padding: 80px 0;
+    background-color: var(--gray-100);
+    position: relative;
+}
+
+.gallery-filters {
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-filter-btn {
+    padding: 10px 24px;
+    border: 1px solid var(--gray-300);
+    background-color: transparent;
+    color: var(--gray-700);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.gallery-filter-btn.active, .gallery-filter-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.gallery-item {
+    margin-bottom: 30px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: var(--transition);
+    height: 100%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-item a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), transparent);
+    padding: 25px 20px 20px;
+    color: white;
+    transform: translateY(100%);
+    transition: var(--transition);
+    opacity: 0;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gallery-overlay h4 {
+    margin-bottom: 5px;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.gallery-overlay p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.lightbox-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: var(--transition);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.gallery-item:hover .lightbox-badge {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-header-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.gallery-header-wave svg {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+/* Estilo do Carrossel FancyBox */
+.fancybox__container {
+    --fancybox-bg: rgba(24, 24, 27, 0.95);
+}
+
+.fancybox__toolbar {
+    --fancybox-color: #fff;
+    --fancybox-hover-color: var(--primary);
+}
+
+.fancybox__nav {
+    --fancybox-color: #fff;
+    --fancybox-hover-color: var(--primary);
+}
+
+.fancybox__caption {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 12px 20px;
+    border-radius: 6px;
+}
+
+/* Responsividade */
+@media (max-width: 1199.98px) {
+    .gallery-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .gallery-header {
+        padding: 140px 0 70px;
+    }
+    
+    .gallery-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .gallery-header {
+        padding: 120px 0 60px;
+    }
+    
+    .gallery-header h1 {
+        font-size: 2.25rem;
+    }
+    
+    .gallery-header p {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-filters {
+        margin-bottom: 2rem;
+    }
+    
+    .gallery-filter-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .gallery-header {
+        padding: 100px 0 50px;
+    }
+    
+    .gallery-header h1 {
+        font-size: 1.75rem;
+    }
+    
+    .gallery-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .gallery-filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .gallery-item img {
+        height: 200px;
+    }
+}
+
+/* Ajustes para FancyBox em dispositivos móveis */
+@media (max-width: 767.98px) {
+    .fancybox__toolbar {
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .fancybox__nav {
+        padding: 10px;
+    }
+}
+
+/* Customização para evitar sobreposição no cabeçalho */
+.gallery-header .container {
+    position: relative;
+    z-index: 10;
+}
+
+.gallery-header-wave path {
+    fill: var(--gray-100);
+}
+
+/* Ajuste específico para corrigir o problema de sobreposição */
+.gallery-header {
+    position: relative;
+    isolation: isolate; /* Cria um novo contexto de empilhamento */
+}
+
+.gallery-header:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1517583010307-3f789911b89c');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.gallery-header > * {
+    position: relative;
+    z-index: 2;
+}
+    </style>
 </head>
 <body>
-
-    <!-- Cabeçalho -->
-    <header class="bg-dark text-white text-center py-5">
-        <h1 class="animate__animated animate__fadeInDown">Galeria de Fotos</h1>
-        <p class="lead">Veja alguns dos nossos projetos e serviços realizados.</p>
-        <a href="index.html" class="btn btn-primary">Voltar para o Início</a>
+    
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="overlay"></div>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.html">
+                        <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#hero">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#servicos">Serviços</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#sobre">Quem Somos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="galeria.html">Galeria</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html#contato">Contato</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.html#contato" class="btn btn-primary ms-lg-3">Orçamento</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- Seção da Galeria -->
-    <section class="py-5 bg-light">
+    <!-- Gallery Header -->
+    <section class="gallery-header">
         <div class="container">
-            <div class="row">
+            <h1 data-aos="fade-down">Nossa <span class="highlight">Galeria</span> de Projetos</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Conheça alguns dos nossos melhores trabalhos em estruturas metálicas realizados com excelência e compromisso.</p>
+            <a href="index.html#contato" class="btn btn-primary btn-lg" data-aos="fade-up" data-aos-delay="300">Solicitar orçamento</a>
+        </div>
+        <div class="gallery-header-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#F3F4F6" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,186.7C384,192,480,224,576,229.3C672,235,768,213,864,213.3C960,213,1056,235,1152,240C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </section>
 
-                <!-- Lista de imagens -->
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (1).jpg" data-lightbox="gallery" data-title="Imagem 1">
-                        <img src="Fotos/imagem (1).jpg" alt="Imagem 1" class="img-fluid rounded shadow-sm">
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-filters" data-aos="fade-up">
+                <button class="gallery-filter-btn active" data-filter="*">Todos</button>
+                <button class="gallery-filter-btn" data-filter="mezanino">Mezaninos</button>
+                <button class="gallery-filter-btn" data-filter="cobertura">Coberturas</button>
+                <button class="gallery-filter-btn" data-filter="barracao">Barracões</button>
+                <button class="gallery-filter-btn" data-filter="portao">Portões</button>
+                <button class="gallery-filter-btn" data-filter="grade">Grades</button>
+            </div>
+
+            <div class="row gallery-container">
+                <!-- Imagem 1 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up">
+                    <a href="Fotos/imagem (1).jpg" data-fancybox="gallery" data-caption="Mezanino Industrial - Estrutura metálica para otimização de espaço comercial">
+                        <img src="Fotos/imagem (1).jpg" alt="Mezanino Industrial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Mezanino Industrial</h4>
+                            <p>Estrutura metálica para otimização de espaço comercial</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (2).jpg" data-lightbox="gallery" data-title="Imagem 2">
-                        <img src="Fotos/imagem (2).jpg" alt="Imagem 2" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 2 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="100">
+                    <a href="Fotos/imagem (2).jpg" data-fancybox="gallery" data-caption="Cobertura Metálica - Proteção e durabilidade para áreas externas">
+                        <img src="Fotos/imagem (2).jpg" alt="Cobertura Metálica" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Cobertura Metálica</h4>
+                            <p>Proteção e durabilidade para áreas externas</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (3).jpg" data-lightbox="gallery" data-title="Imagem 3">
-                        <img src="Fotos/imagem (3).jpg" alt="Imagem 3" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 3 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="200">
+                    <a href="Fotos/imagem (3).jpg" data-fancybox="gallery" data-caption="Portão Residencial - Segurança e estética para sua entrada">
+                        <img src="Fotos/imagem (3).jpg" alt="Portão Residencial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Portão Residencial</h4>
+                            <p>Segurança e estética para sua entrada</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (4).jpg" data-lightbox="gallery" data-title="Imagem 4">
-                        <img src="Fotos/imagem (4).jpg" alt="Imagem 4" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 4 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up">
+                    <a href="Fotos/imagem (4).jpg" data-fancybox="gallery" data-caption="Grade de Proteção - Segurança com design personalizado">
+                        <img src="Fotos/imagem (4).jpg" alt="Grade de Proteção" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Grade de Proteção</h4>
+                            <p>Segurança com design personalizado</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (5).jpg" data-lightbox="gallery" data-title="Imagem 5">
-                        <img src="Fotos/imagem (5).jpg" alt="Imagem 5" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 5 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="barracao" data-aos="fade-up" data-aos-delay="100">
+                    <a href="Fotos/imagem (5).jpg" data-fancybox="gallery" data-caption="Estrutura para Barracão - Espaço amplo e resistente para diversas finalidades">
+                        <img src="Fotos/imagem (5).jpg" alt="Estrutura para Barracão" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Estrutura para Barracão</h4>
+                            <p>Espaço amplo e resistente para diversas finalidades</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (6).jpg" data-lightbox="gallery" data-title="Imagem 6">
-                        <img src="Fotos/imagem (6).jpg" alt="Imagem 6" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 6 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="200">
+                    <a href="Fotos/imagem (6).jpg" data-fancybox="gallery" data-caption="Cobertura para Garagem - Proteção eficiente para veículos">
+                        <img src="Fotos/imagem (6).jpg" alt="Cobertura para Garagem" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Cobertura para Garagem</h4>
+                            <p>Proteção eficiente para veículos</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (7).jpg" data-lightbox="gallery" data-title="Imagem 7">
-                        <img src="Fotos/imagem (7).jpg" alt="Imagem 7" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 7 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up">
+                    <a href="Fotos/imagem (7).jpg" data-fancybox="gallery" data-caption="Mezanino Comercial - Aproveitamento vertical do espaço com segurança">
+                        <img src="Fotos/imagem (7).jpg" alt="Mezanino Comercial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Mezanino Comercial</h4>
+                            <p>Aproveitamento vertical do espaço com segurança</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (8).jpg" data-lightbox="gallery" data-title="Imagem 8">
-                        <img src="Fotos/imagem (8).jpg" alt="Imagem 8" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 8 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="100">
+                    <a href="Fotos/imagem (8).jpg" data-fancybox="gallery" data-caption="Portão Automático - Praticidade e proteção para sua residência">
+                        <img src="Fotos/imagem (8).jpg" alt="Portão Automático" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Portão Automático</h4>
+                            <p>Praticidade e proteção para sua residência</p>
+                        </div>
                     </a>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <a href="Fotos/imagem (9).jpg" data-lightbox="gallery" data-title="Imagem 9">
-                        <img src="Fotos/imagem (9).jpg" alt="Imagem 9" class="img-fluid rounded shadow-sm">
+
+                <!-- Imagem 9 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up" data-aos-delay="200">
+                    <a href="Fotos/imagem (9).jpg" data-fancybox="gallery" data-caption="Gradil de Segurança - Proteção eficiente com design elegante">
+                        <img src="Fotos/imagem (9).jpg" alt="Gradil de Segurança" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Gradil de Segurança</h4>
+                            <p>Proteção eficiente com design elegante</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (10).jpg' data-lightbox='gallery' data-title='Imagem 10'>
-                        <img src='Fotos/imagem (10).jpg' alt='Imagem 10' class='img-fluid rounded shadow-sm'>
+
+                <!-- Imagem 10 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="barracao" data-aos="fade-up">
+                    <a href="Fotos/imagem (10).jpg" data-fancybox="gallery" data-caption="Estrutura Industrial - Construção robusta para ambientes industriais">
+                        <img src="Fotos/imagem (10).jpg" alt="Estrutura Industrial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Estrutura Industrial</h4>
+                            <p>Construção robusta para ambientes industriais</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (11).jpg' data-lightbox='gallery' data-title='Imagem 11'>
-                        <img src='Fotos/imagem (11).jpg' alt='Imagem 11' class='img-fluid rounded shadow-sm'>
+
+                <!-- Imagem 11 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="100">
+                    <a href="Fotos/imagem (11).jpg" data-fancybox="gallery" data-caption="Cobertura Comercial - Solução completa para proteção de áreas externas">
+                        <img src="Fotos/imagem (11).jpg" alt="Cobertura Comercial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Cobertura Comercial</h4>
+                            <p>Solução completa para proteção de áreas externas</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (12).jpg' data-lightbox='gallery' data-title='Imagem 12'>
-                        <img src='Fotos/imagem (12).jpg' alt='Imagem 12' class='img-fluid rounded shadow-sm'>
+
+                <!-- Imagem 12 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up" data-aos-delay="200">
+                    <a href="Fotos/imagem (12).jpg" data-fancybox="gallery" data-caption="Mezanino Personalizado - Estrutura feita sob medida para seu espaço">
+                        <img src="Fotos/imagem (12).jpg" alt="Mezanino Personalizado" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Mezanino Personalizado</h4>
+                            <p>Estrutura feita sob medida para seu espaço</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (13).jpeg' data-lightbox='gallery' data-title='Imagem 13'>
-                        <img src='Fotos/imagem (13).jpeg' alt='Imagem 13' class='img-fluid rounded shadow-sm'>
+                
+                <!-- Imagem 13 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up">
+                    <a href="Fotos/imagem (13).jpeg" data-fancybox="gallery" data-caption="Grade Decorativa - Segurança com estilo para sua propriedade">
+                        <img src="Fotos/imagem (13).jpeg" alt="Grade Decorativa" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Grade Decorativa</h4>
+                            <p>Segurança com estilo para sua propriedade</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (14).jpg' data-lightbox='gallery' data-title='Imagem 14'>
-                        <img src='Fotos/imagem (14).jpg' alt='Imagem 14' class='img-fluid rounded shadow-sm'>
+                
+                <!-- Imagem 14 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="100">
+                    <a href="Fotos/imagem (14).jpg" data-fancybox="gallery" data-caption="Portão Deslizante - Solução moderna para entradas amplas">
+                        <img src="Fotos/imagem (14).jpg" alt="Portão Deslizante" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Portão Deslizante</h4>
+                            <p>Solução moderna para entradas amplas</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (15).jpg' data-lightbox='gallery' data-title='Imagem 15'>
-                        <img src='Fotos/imagem (15).jpg' alt='Imagem 15' class='img-fluid rounded shadow-sm'>
+                
+                <!-- Imagem 15 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="200">
+                    <a href="Fotos/imagem (15).jpg" data-fancybox="gallery" data-caption="Cobertura Residencial - Proteção elegante para áreas externas">
+                        <img src="Fotos/imagem (15).jpg" alt="Cobertura Residencial" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                        <div class="gallery-overlay">
+                            <h4>Cobertura Residencial</h4>
+                            <p>Proteção elegante para áreas externas</p>
+                        </div>
                     </a>
                 </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (16).jpg' data-lightbox='gallery' data-title='Imagem 16'>
-                        <img src='Fotos/imagem (16).jpg' alt='Imagem 16' class='img-fluid rounded shadow-sm'>
-                    </a>
-                </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (17).jpg' data-lightbox='gallery' data-title='Imagem 17'>
-                        <img src='Fotos/imagem (17).jpg' alt='Imagem 17' class='img-fluid rounded shadow-sm'>
-                    </a>
-                </div>
-                <div class='col-md-4 mb-4'>
-                    <a href='Fotos/imagem (18).jpg' data-lightbox='gallery' data-title='Imagem 18'>
-                        <img src='Fotos/imagem (18).jpg' alt='Imagem 18' class='img-fluid rounded shadow-sm'>
-                    </a>
-                </div>
-                <!-- Adicione mais imagens conforme necessário -->
-            </div> <!-- .row -->
-        </div> <!-- .container -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-wrapper text-center" data-aos="zoom-in">
+                <h2>Gostou do que viu?</h2>
+                <p>Entre em contato conosco e transforme seu projeto em realidade.</p>
+                <a href="index.html#contato" class="btn btn-light btn-lg mt-4">Solicitar orçamento</a>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer" style="background-color: #333; color: white; padding: 20px; text-align: center;">
-        <div>
-            &copy; 2024 Metálica Colombo | Todos os direitos reservados
-        </div>
-        <div>
-            CNPJ: 51.747.391/0001-43 | Desenvolvido por Kauan Lauer
-        </div>
-        <div>
-            <a href="Politica-De-Privacidade.html" style="color: white; text-decoration: underline;">Política de Privacidade</a> | 
-            <a href="Termos-De-Uso.html" style="color: white; text-decoration: underline;">Termos de Uso</a> | 
-            <a href="version.html" style="color: white; text-decoration: underline;">Versão: 1.2.1</a>
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-info">
+                            <div class="footer-logo">
+                                <span class="logo-text">Metálica <span class="highlight">Colombo</span></span>
+                            </div>
+                            <p>Especializados em estruturas metálicas para residências, comércios e indústrias em Curitiba e região.</p>
+                            <div class="social-links">
+                                <a href="https://www.instagram.com/metalicacolombo/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://api.whatsapp.com/send/?phone=554197602279" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <div class="footer-links">
+                            <h5>Links Rápidos</h5>
+                            <ul>
+                                <li><a href="index.html#hero">Início</a></li>
+                                <li><a href="index.html#servicos">Serviços</a></li>
+                                <li><a href="index.html#sobre">Quem Somos</a></li>
+                                <li><a href="galeria.html">Galeria</a></li>
+                                <li><a href="index.html#contato">Contato</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="footer-links">
+                            <h5>Informações Legais</h5>
+                            <ul>
+                                <li><a href="Termos-De-Uso.html">Termos de Uso</a></li>
+                                <li><a href="Politica-De-Privacidade.html">Política de Privacidade</a></li>
+                                <li><a href="version.html">Versão: 2.0.0</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2025 Metálica Colombo | CNPJ: 51.747.391/0001-43</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p>Desenvolvido por Kauan Lauer</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3002306763843018"
-     crossorigin="anonymous"></script>
 
-    <!-- Scripts -->
-    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Cookies Consent -->
+    <div class="cookies-consent" id="cookiesConsent">
+        <div class="container">
+            <div class="cookies-content">
+                <p>Ao acessar este site, você concorda com nossos <a href="Termos-De-Uso.html" target="_blank">Termos de Uso</a> e <a href="Politica-De-Privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+                <div class="cookies-buttons">
+                    <button id="acceptCookies" class="btn btn-primary">Aceitar</button>
+                    <button id="declineCookies" class="btn btn-outline">Recusar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Fancybox JS para o carrossel -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <!-- Script Principal -->
+    <script>
+        // Inicialização do AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
+
+        // Adicionar classe 'sticky' ao cabeçalho ao rolar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+
+        // Configuração do Fancybox
+        Fancybox.bind("[data-fancybox]", {
+            // Opções para o Fancybox
+            Carousel: {
+                infinite: true,
+            },
+            Toolbar: {
+                display: [
+                    { id: "prev", position: "center" },
+                    { id: "counter", position: "center" },
+                    { id: "next", position: "center" },
+                    "zoom",
+                    "slideshow",
+                    "fullscreen",
+                    "close",
+                ],
+            },
+            Image: {
+                zoom: true,
+                click: "close",
+                wheel: "slide",
+            },
+            on: {
+                reveal: (fancybox, slide) => {
+                    if (slide.type === "image") {
+                        // Remover qualquer texto da interface do lightbox
+                        // que poderia sobrepor a imagem
+                    }
+                }
+            }
+        });
+
+        // Filtro da galeria
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remover classe ativa de todos os botões
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Adicionar classe ativa ao botão clicado
+                    this.classList.add('active');
+                    
+                    // Obter filtro selecionado
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filtrar itens da galeria
+                    galleryItems.forEach(item => {
+                        if (filterValue === '*') {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else if (item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+        });
+
+        // Gerenciamento de consentimento de cookies
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiesConsent = document.getElementById('cookiesConsent');
+            
+            // Verificar se o usuário já aceitou os cookies anteriormente
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookiesConsent.style.display = 'block';
+                }, 1000);
+            }
+            
+            // Botão Aceitar
+            document.getElementById('acceptCookies').addEventListener('click', function() {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookiesConsent.style.display = 'none';
+            });
+            
+            // Botão Recusar
+            document.getElementById('declineCookies').addEventListener('click', function() {
+                window.location.href = 'erroTermos.html';
+            });
+        });
+
+        // Animação de carregamento para as imagens
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = document.querySelectorAll('.gallery-item img');
+            
+            galleryImages.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.parentElement.classList.add('loaded');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
