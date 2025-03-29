@@ -209,32 +209,6 @@
     position: relative;
 }
 
-.gallery-filters {
-    margin-bottom: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.gallery-filter-btn {
-    padding: 10px 24px;
-    border: 1px solid var(--gray-300);
-    background-color: transparent;
-    color: var(--gray-700);
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.gallery-filter-btn.active, .gallery-filter-btn:hover {
-    background-color: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
 .gallery-item {
     margin-bottom: 30px;
     border-radius: var(--border-radius-lg);
@@ -405,13 +379,8 @@
         font-size: 1.1rem;
     }
     
-    .gallery-filters {
-        margin-bottom: 2rem;
-    }
-    
-    .gallery-filter-btn {
-        padding: 8px 16px;
-        font-size: 0.9rem;
+    .gallery-item {
+        margin-bottom: 20px;
     }
 }
 
@@ -427,12 +396,6 @@
     .gallery-header p {
         font-size: 1rem;
         padding: 0 15px;
-    }
-    
-    .gallery-filter-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        margin-bottom: 8px;
     }
     
     .gallery-item img {
@@ -855,222 +818,275 @@
     <!-- Gallery Section -->
     <section class="gallery-section">
         <div class="container">
-            <div class="gallery-filters" data-aos="fade-up">
-                <button class="gallery-filter-btn active" data-filter="*">Todos</button>
-                <button class="gallery-filter-btn" data-filter="mezanino">Mezaninos</button>
-                <button class="gallery-filter-btn" data-filter="cobertura">Coberturas</button>
-                <button class="gallery-filter-btn" data-filter="barracao">Barracões</button>
-                <button class="gallery-filter-btn" data-filter="portao">Portões</button>
-                <button class="gallery-filter-btn" data-filter="grade">Grades</button>
-            </div>
-
             <div class="row gallery-container">
+                <!-- Usando todas as imagens encontradas na captura de tela -->
+                
                 <!-- Imagem 1 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up">
-                    <a href="Fotos/imagem (1).jpg" data-fancybox="gallery" data-caption="Mezanino Industrial - Estrutura metálica para otimização de espaço comercial">
-                        <img src="Fotos/imagem (1).jpg" alt="Mezanino Industrial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (1).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (1).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Mezanino Industrial</h4>
-                            <p>Estrutura metálica para otimização de espaço comercial</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 2 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="100">
-                    <a href="Fotos/imagem (2).jpg" data-fancybox="gallery" data-caption="Cobertura Metálica - Proteção e durabilidade para áreas externas">
-                        <img src="Fotos/imagem (2).jpg" alt="Cobertura Metálica" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (2).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (2).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Cobertura Metálica</h4>
-                            <p>Proteção e durabilidade para áreas externas</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 3 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="200">
-                    <a href="Fotos/imagem (3).jpg" data-fancybox="gallery" data-caption="Portão Residencial - Segurança e estética para sua entrada">
-                        <img src="Fotos/imagem (3).jpg" alt="Portão Residencial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (3).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (3).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Portão Residencial</h4>
-                            <p>Segurança e estética para sua entrada</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 4 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up">
-                    <a href="Fotos/imagem (4).jpg" data-fancybox="gallery" data-caption="Grade de Proteção - Segurança com design personalizado">
-                        <img src="Fotos/imagem (4).jpg" alt="Grade de Proteção" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (4).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (4).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Grade de Proteção</h4>
-                            <p>Segurança com design personalizado</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 5 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="barracao" data-aos="fade-up" data-aos-delay="100">
-                    <a href="Fotos/imagem (5).jpg" data-fancybox="gallery" data-caption="Estrutura para Barracão - Espaço amplo e resistente para diversas finalidades">
-                        <img src="Fotos/imagem (5).jpg" alt="Estrutura para Barracão" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (5).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (5).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Estrutura para Barracão</h4>
-                            <p>Espaço amplo e resistente para diversas finalidades</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 6 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="200">
-                    <a href="Fotos/imagem (6).jpg" data-fancybox="gallery" data-caption="Cobertura para Garagem - Proteção eficiente para veículos">
-                        <img src="Fotos/imagem (6).jpg" alt="Cobertura para Garagem" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (6).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (6).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Cobertura para Garagem</h4>
-                            <p>Proteção eficiente para veículos</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 7 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up">
-                    <a href="Fotos/imagem (7).jpg" data-fancybox="gallery" data-caption="Mezanino Comercial - Aproveitamento vertical do espaço com segurança">
-                        <img src="Fotos/imagem (7).jpg" alt="Mezanino Comercial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (7).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (7).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Mezanino Comercial</h4>
-                            <p>Aproveitamento vertical do espaço com segurança</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 8 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="100">
-                    <a href="Fotos/imagem (8).jpg" data-fancybox="gallery" data-caption="Portão Automático - Praticidade e proteção para sua residência">
-                        <img src="Fotos/imagem (8).jpg" alt="Portão Automático" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (8).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (8).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Portão Automático</h4>
-                            <p>Praticidade e proteção para sua residência</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 9 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up" data-aos-delay="200">
-                    <a href="Fotos/imagem (9).jpg" data-fancybox="gallery" data-caption="Gradil de Segurança - Proteção eficiente com design elegante">
-                        <img src="Fotos/imagem (9).jpg" alt="Gradil de Segurança" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (9).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (9).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Gradil de Segurança</h4>
-                            <p>Proteção eficiente com design elegante</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 10 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="barracao" data-aos="fade-up">
-                    <a href="Fotos/imagem (10).jpg" data-fancybox="gallery" data-caption="Estrutura Industrial - Construção robusta para ambientes industriais">
-                        <img src="Fotos/imagem (10).jpg" alt="Estrutura Industrial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (10).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (10).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Estrutura Industrial</h4>
-                            <p>Construção robusta para ambientes industriais</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 11 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="100">
-                    <a href="Fotos/imagem (11).jpg" data-fancybox="gallery" data-caption="Cobertura Comercial - Solução completa para proteção de áreas externas">
-                        <img src="Fotos/imagem (11).jpg" alt="Cobertura Comercial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (11).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (11).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Cobertura Comercial</h4>
-                            <p>Solução completa para proteção de áreas externas</p>
                         </div>
                     </a>
                 </div>
 
                 <!-- Imagem 12 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="mezanino" data-aos="fade-up" data-aos-delay="200">
-                    <a href="Fotos/imagem (12).jpg" data-fancybox="gallery" data-caption="Mezanino Personalizado - Estrutura feita sob medida para seu espaço">
-                        <img src="Fotos/imagem (12).jpg" alt="Mezanino Personalizado" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (12).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (12).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Mezanino Personalizado</h4>
-                            <p>Estrutura feita sob medida para seu espaço</p>
                         </div>
                     </a>
                 </div>
                 
                 <!-- Imagem 13 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="grade" data-aos="fade-up">
-                    <a href="Fotos/imagem (13).jpeg" data-fancybox="gallery" data-caption="Grade Decorativa - Segurança com estilo para sua propriedade">
-                        <img src="Fotos/imagem (13).jpeg" alt="Grade Decorativa" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (13).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (13).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Grade Decorativa</h4>
-                            <p>Segurança com estilo para sua propriedade</p>
                         </div>
                     </a>
                 </div>
                 
                 <!-- Imagem 14 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="portao" data-aos="fade-up" data-aos-delay="100">
-                    <a href="Fotos/imagem (14).jpg" data-fancybox="gallery" data-caption="Portão Deslizante - Solução moderna para entradas amplas">
-                        <img src="Fotos/imagem (14).jpg" alt="Portão Deslizante" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (14).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (14).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
-                        </div>
-                        <div class="gallery-overlay">
-                            <h4>Portão Deslizante</h4>
-                            <p>Solução moderna para entradas amplas</p>
                         </div>
                     </a>
                 </div>
                 
                 <!-- Imagem 15 -->
-                <div class="col-lg-4 col-md-6 gallery-item" data-category="cobertura" data-aos="fade-up" data-aos-delay="200">
-                    <a href="Fotos/imagem (15).jpg" data-fancybox="gallery" data-caption="Cobertura Residencial - Proteção elegante para áreas externas">
-                        <img src="Fotos/imagem (15).jpg" alt="Cobertura Residencial" class="img-fluid">
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (15).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (15).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
                         <div class="lightbox-badge">
                             <i class="fas fa-search-plus"></i>
                         </div>
-                        <div class="gallery-overlay">
-                            <h4>Cobertura Residencial</h4>
-                            <p>Proteção elegante para áreas externas</p>
+                    </a>
+                </div>
+                
+                <!-- Imagem 16 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (16).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (16).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 17 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (17).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (17).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 18 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (18).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (18).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 19 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (19).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (19).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 20 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (20).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (20).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 21 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (21).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (21).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 22 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (22).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (22).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 23 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (23).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (23).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 24 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (24).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (24).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 25 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up">
+                    <a href="./Fotos/foto (25).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (25).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 26 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <a href="./Fotos/foto (26).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (26).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Imagem 27 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <a href="./Fotos/foto (27).jpeg" data-fancybox="gallery" data-caption="Projeto Metálica Colombo">
+                        <img src="./Fotos/foto (27).jpeg" alt="Projeto Metálica Colombo" class="img-fluid">
+                        <div class="lightbox-badge">
+                            <i class="fas fa-search-plus"></i>
                         </div>
                     </a>
                 </div>
@@ -1204,71 +1220,6 @@
                     }
                 }
             }
-        });
-
-        // Filtro da galeria
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remover classe ativa de todos os botões
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Adicionar classe ativa ao botão clicado
-                    this.classList.add('active');
-                    
-                    // Obter filtro selecionado
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Filtrar itens da galeria
-                    galleryItems.forEach(item => {
-                        if (filterValue === '*') {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 100);
-                        } else if (item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'scale(1)';
-                            }, 100);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'scale(0.8)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        });
-
-        // Gerenciamento de consentimento de cookies
-        document.addEventListener('DOMContentLoaded', function() {
-            const cookiesConsent = document.getElementById('cookiesConsent');
-            
-            // Verificar se o usuário já aceitou os cookies anteriormente
-            if (!localStorage.getItem('cookiesAccepted')) {
-                setTimeout(() => {
-                    cookiesConsent.style.display = 'block';
-                }, 1000);
-            }
-            
-            // Botão Aceitar
-            document.getElementById('acceptCookies').addEventListener('click', function() {
-                localStorage.setItem('cookiesAccepted', 'true');
-                cookiesConsent.style.display = 'none';
-            });
-            
-            // Botão Recusar
-            document.getElementById('declineCookies').addEventListener('click', function() {
-                window.location.href = 'erroTermos.html';
-            });
         });
 
         // Animação de carregamento para as imagens

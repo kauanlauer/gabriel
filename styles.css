@@ -1112,7 +1112,7 @@ textarea.form-control {
 .btn-outline {
     background-color: transparent;
     border: 2px solid var(--gray-300);
-    color: var(--gray-700);
+    
     font-weight: 600;
     transition: var(--transition);
     display: inline-block;
